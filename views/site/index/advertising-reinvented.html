@@ -1,0 +1,71 @@
+<section id="advertising-reinvented" class="section full-page">
+	<div id="homepage-video-wrap">
+		<video id="homepage-video" autoplay muted loop playsinline src="<?php echo SITE_URL; ?>/static/videos/particles_1080p.mp4"></video>
+	</div>
+		<div class="container">
+			<div id="advertising-reinvented-left-right" class="row last align-items-center">
+				<div id="advertising-reinvented-left" class="col">
+					<h1>Run visual tests automatically with every release.</h1>
+					
+					<div class="row">
+					
+					<div id="advertising-reinvented-right" class="col-6">
+						<video id="adhash-v1" autoplay muted loop playsinline poster="<?php echo SITE_URL; ?>/static/images/videos/adhash-v1.jpg" data-src="<?php echo SITE_URL; ?>/static/videos/particles_1080p.mp4"></video>
+						<div class="row border-offset-20 last justify-content-center">
+							<!-- <div class="col-auto"> -->
+								<!-- <a href="<?php echo SITE_URL; ?>/site/join-form.html" target="_blank" class="join-adhash btn btn-lg btn-primary form-page-open"> -->
+									<!-- <span><?php echo Language::translate('btn.get.started.for.free'); ?></span> -->
+								<!-- </a> -->
+							<!-- </div> -->
+							<!-- <div class="col-auto"> -->
+								<!-- <a href="<?php echo SITE_URL; ?>/static/documents/AdHash_-_A_Fundamental_Rethinking_of_RTB_Advertising.pdf" target="_blank" class="read-white-paper btn btn-lg btn-outline-primary btn-bg-20242c" onclick="gtag('event', 'whitepaperDownload');"> -->
+									<!-- <span><?php echo Language::translate('btn.tequest.a.demo'); ?></span> -->
+									<!-- <span><?php echo Language::translate('btn.request.demo'); ?></span> -->
+								<!-- </a> -->
+							<!-- </div>  -->
+						</div>
+					</div>
+					
+					<div class="col-6">
+					
+					<p>Compare visual differences across every</p>
+					<?php
+						$cryptoMessages = array(
+							'platform',
+							'browser',
+							'operating system',
+							'geolocation',
+							'resolution',
+							'device',
+							'version'
+						);
+					?>
+					<p id="crypto-message" data-messages="<?php echo implode(',', $cryptoMessages); ?>"></p>
+					<div class="row border-offset-20 last">
+						<div class="col-auto">
+							<a href="<?php echo SITE_URL; ?>/site/join-form.html" target="_blank" class="join-adhash btn btn-lg btn-primary form-page-open">
+								<span><?php echo Language::translate('btn.get.started.for.free'); ?></span>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a href="<?php echo SITE_URL; ?>/static/documents/AdHash_-_A_Fundamental_Rethinking_of_RTB_Advertising.pdf" target="_blank" class="read-white-paper btn btn-lg btn-outline-primary btn-bg-20242c" onclick="gtag('event', 'whitepaperDownload');">
+								<span><?php echo Language::translate('btn.request.a.demo'); ?></span>
+								<span><?php echo Language::translate('btn.request.demo'); ?></span>
+							</a>
+						</div>
+					</div>
+					
+					</div>
+					
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	<a href="#adhash-dashboard" class="next-post"></a>
+	<script>
+		cryptoMessageInit('crypto-message');
+		loadVideo('adhash-v1');
+	</script>
+</section>

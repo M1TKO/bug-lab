@@ -1,0 +1,28 @@
+<section id="error-404" class="section full-page">
+	<figure>
+		<?php echo file_get_contents(ROOT_FOLDER . DS . 'static' . DS . 'images' . DS . '404.svg'); ?>
+		<figcaption>
+			<h2><?php echo Language::translate('error404.title'); ?></h2>
+			<div class="bi-lg"></div>
+			<p><?php echo Language::translate('error404.description'); ?></p>
+			<small><?php echo Language::translate('error404.start.from'); ?></small>
+			<div class="row last justify-content-center">
+				<div class="col-auto">
+					<a href="<?php echo SITE_URL; ?>" class="btn btn-outline-primary">
+						<span><?php echo Language::translate('nav.home'); ?></span>
+					</a>
+				</div>
+				<div class="col-auto">
+					<a href="<?php echo SITE_URL; ?>#solutions" class="btn btn-outline-primary">
+						<span><?php echo Language::translate('nav.solutions'); ?></span>
+					</a>
+				</div>
+				<div class="col-auto">
+					<a href="<?php echo SITE_URL; ?>/help.html" class="btn btn-outline-primary">
+						<span><?php echo Language::translate('nav.help'); ?></span>
+					</a>
+				</div>
+			</div>
+		</figcaption>
+	</figure>
+</section>

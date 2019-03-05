@@ -1,0 +1,50 @@
+<section id="adhash-rtb-protocol" class="section full-page">
+	<header class="section-header">
+		<h1 class="section-title">The AdHash RTB Protocol</h1>
+	</header>
+	<div class="section-container">
+		<div class="container">
+			<div id="adhash-rtb-protocol-left-right" class="row last">
+				<div id="adhash-rtb-protocol-left" class="col">
+					<div id="communication_protocol_wrap">
+						<?php echo file_get_contents(ROOT_FOLDER . DS . 'static' . DS . 'images' . DS . 'communication-protocol.svg'); ?>
+					</div>
+				</div>
+				<div id="adhash-rtb-protocol-right" class="col align-self-center">
+					<div class="row last">
+						<div class="col-12">
+							<h2 id="cps-1" class="custom-control custom-checkbox">
+								<input id="realTimeLayer" class="custom-control-input" type="checkbox">
+								<label for="realTimeLayer" class="custom-control-label">Real-time layer</label>
+							</h2>
+							<p>Facilitates all communications required to serve an ad in less than 10 milliseconds.</p>
+						</div>
+						<div class="col-12">
+							<h2 id="cps-2" class="custom-control custom-checkbox">
+								<input id="synchronousLayer" class="custom-control-input" type="checkbox">
+								<label for="synchronousLayer" class="custom-control-label">Synchronous layer</label>
+							</h2>
+							<p>Performs operations related to ad trading and voting, scheduled to occur at specific intervals, such as payments and rewards.</p>
+						</div>
+						<div class="col-12">
+							<h2 id="cps-3" class="custom-control custom-checkbox">
+								<input id="asynchronousLayer" class="custom-control-input" type="checkbox">
+								<label for="asynchronousLayer" class="custom-control-label">Asynchronous layer</label>
+							</h2>
+							<p>Manages processes initiated by users or algorithms at arbitrary times, such as voting and campaign implementations.</p>
+						</div>
+						<div class="col-12">
+							<h2 id="cps-4" class="custom-control custom-checkbox">
+								<input id="fullProtocol" class="custom-control-input" type="checkbox">
+								<label for="fullProtocol" class="custom-control-label">Full protocol</label>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		animCommunicationProtocolInit();
+	</script>
+</section>

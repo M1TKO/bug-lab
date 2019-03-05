@@ -1,0 +1,59 @@
+<section id="frequently-asked-questions" class="section">
+	<header class="section-header">
+		<h1 class="section-title">Frequently Asked Questions</h1>
+	</header>
+	<div class="section-container">
+		<div class="container">
+			<div class="row last justify-content-left">
+				<?php
+					$benefits = array(
+						array(
+							'Unique Hash IDs',
+								'Accountability and better user control.'
+						),
+						array(
+							'Server-Side Platform',
+								'First-party ad serving and data analytics.'
+						),
+						array(
+							'AdHash Bidder',
+								'Improved bidding model and user privacy.'
+						),
+						array(
+							'Blockchain transactions',
+								'Verifiable ad serving history.'
+						),
+						array(
+							'Off-chain transactions',
+								'Unlimited scalability and added privacy.'
+						),
+						array(
+							'Communication protocol',
+								'Secure and instant dispute resolution.'
+						),
+						array(
+							'Voting system',
+								'Insentivised and democratised governance.'
+						),
+						array(
+							'Open-source code',
+								'Auditable and open to integrations.'
+						),
+						array(
+							'Native cryptocurrency',
+								'Fast payments and community incentives.'
+						)
+					);
+				?>
+				<?php foreach($benefits as $benefit): ?>
+					<figure class="col-md-4">
+						<figcaption>
+							<h2><?php echo $benefit[0]; ?></h2>
+							<p><?php echo $benefit[1]; ?></p>
+						</figcaption>
+					</figure>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+</section>

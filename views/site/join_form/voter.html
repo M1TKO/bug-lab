@@ -1,0 +1,165 @@
+<form action="<?php echo SITE_URL; ?>/site/join-form/voter.html" method="post" autocomplete="off" role="tabpanel" id="voter" class="tab-pane<?php if($form == 'voter'): ?> show active<?php endif; ?>" aria-labelledby="voter-tab">
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="voterName"><?php echo Language::translate('form.name'); ?>:</label>
+				<?php
+					$name = ($form == 'voter' && isset($_POST['name']) ? $_POST['name'] : '');
+					$nameErrorMSG = ($form == 'voter' && !empty($errorValidation['name']) ? $errorValidation['name'] : '');
+				?>
+				<input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>" id="voterName" class="form-control<?php if($nameErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="nameVoterHelp" />
+				<div class="line-gradient"></div>
+				<small id="nameVoterHelp" class="invalid-feedback"><?php echo $nameErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="voterEmailAddress"><?php echo Language::translate('form.emailAddress'); ?>:</label>
+				<?php
+					$emailAddress = ($form == 'voter' && isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '');
+					$emailAddressErrorMSG = ($form == 'voter' && !empty($errorValidation['emailAddress']) ? $errorValidation['emailAddress'] : '');
+				?>
+				<input type="text" name="emailAddress" value="<?php echo htmlspecialchars($emailAddress); ?>" id="voterEmailAddress" class="form-control<?php if($emailAddressErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="emailAddressVoterHelp" />
+				<div class="line-gradient"></div>
+				<small id="emailAddressVoterHelp" class="invalid-feedback"><?php echo $emailAddressErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="voterContactNumber">
+					<?php echo Language::translate('form.contactNumber'); ?>:
+					<span class="o-075"><?php echo Language::translate('form.optional'); ?></span>
+				</label>
+				<?php $contactNumber = ($form == 'voter' && isset($_POST['contactNumber']) ? $_POST['contactNumber'] : ''); ?>
+				<input type="text" name="contactNumber" value="<?php echo htmlspecialchars($contactNumber); ?>" id="voterContactNumber" class="form-control" pattern="[0-9\.\-\s\(\)]{5,}" />
+				<div class="line-gradient"></div>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="voterCountry"><?php echo Language::translate('form.country'); ?>:</label>
+				<?php
+					$country = ($form == 'voter' && isset($_POST['country']) ? $_POST['country'] : '');
+					$countryErrorMSG = ($form == 'voter' && !empty($errorValidation['country']) ? $errorValidation['country'] : '');
+				?>
+				<select name="country" id="voterCountry" class="form-control custom-select<?php if($countryErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="countryVoterHelp">
+					<option value=""><?php echo Language::translate('form.country.select'); ?></option>
+					<?php $countries = CountriesHelper::$countries; ?>
+					<?php foreach($countries as $countryCode => $countryName): ?>
+						<option value="<?php echo $countryCode; ?>" <?php if($country == $countryCode): ?>selected="selected"<?php endif; ?>>
+							<?php echo $countryName; ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
+				<div class="line-gradient"></div>
+				<small id="countryVoterHelp" class="invalid-feedback"><?php echo $countryErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label for="voterWalletId"><?php echo Language::translate('form.walletId'); ?>:</label>
+				<?php
+					$walletId = ($form == 'voter' && isset($_POST['walletId']) ? $_POST['walletId'] : '');
+					$walletIdErrorMSG = ($form == 'voter' && !empty($errorValidation['walletId']) ? $errorValidation['walletId'] : '');
+				?>
+				<input type="text" name="walletId" value="<?php echo htmlspecialchars($walletId); ?>" id="voterWalletId" class="form-control<?php if($walletIdErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="walletIdVoterHelp" />
+				<div class="line-gradient"></div>
+				<small id="walletIdVoterHelp" class="invalid-feedback"><?php echo $walletIdErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="voterPassword"><?php echo Language::translate('form.password'); ?>:</label>
+				<?php $passwordErrorMSG = ($form == 'voter' && !empty($errorValidation['password']) ? $errorValidation['password'] : ''); ?>
+				<input type="password" name="password" id="voterPassword" class="form-control<?php if($passwordErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="passwordVoterHelp" />
+				<div class="line-gradient"></div>
+				<small id="passwordVoterHelp" class="invalid-feedback"><?php echo $passwordErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="voterConfirmPassword"><?php echo Language::translate('form.confirmPassword'); ?>:</label>
+				<?php $confirmPasswordErrorMSG = ($form == 'voter' && !empty($errorValidation['confirmPassword']) ? $errorValidation['confirmPassword'] : ''); ?>
+				<input type="password" name="confirmPassword" id="voterConfirmPassword" class="form-control<?php if($confirmPasswordErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="confirmPasswordVoterHelp" />
+				<div class="line-gradient"></div>
+				<small id="confirmPasswordVoterHelp" class="invalid-feedback"><?php echo $confirmPasswordErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label for="voterAboutAdhash">
+					<?php echo Language::translate('form.questionLAAdH'); ?>
+					<span class="o-075"><?php echo Language::translate('form.optional'); ?></span>
+				</label>
+				<?php
+					$questionLAAdHSawAnAd = ($form == 'voter' && isset($_POST['questionLAAdH']['SawAnAd']));
+					$questionLAAdHFromTheMedia = ($form == 'voter' && isset($_POST['questionLAAdH']['FromTheMedia']));
+					$questionLAAdHThroughOnlineResearch = ($form == 'voter' && isset($_POST['questionLAAdH']['ThroughOnlineResearch']));
+					$questionLAAdHReferredByAnExistingUser = ($form == 'voter' && isset($_POST['questionLAAdH']['ReferredByAnExistingUser']));
+					$questionLAAdHOther = ($form == 'voter' && isset($_POST['questionLAAdH']['Other']));
+					$questionLAAdHOtherField = ($questionLAAdHOther ? $_POST['questionLAAdH']['Other'] : '');
+				?>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[SawAnAd]" value="yes" id="voterSawAnAd" class="custom-control-input" <?php if($questionLAAdHSawAnAd): ?>checked="checked"<?php endif; ?> />
+							<label for="voterSawAnAd" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.SawAnAd'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[FromTheMedia]" value="yes" id="voterFromTheMedia" class="custom-control-input" <?php if($questionLAAdHFromTheMedia): ?>checked="checked"<?php endif; ?> />
+							<label for="voterFromTheMedia" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.FromTheMedia'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[ThroughOnlineResearch]" value="yes" id="voterThroughOnlineResearch" class="custom-control-input" <?php if($questionLAAdHThroughOnlineResearch): ?>checked="checked"<?php endif; ?> />
+							<label for="voterThroughOnlineResearch" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.ThroughOnlineResearch'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[ReferredByAnExistingUser]" value="yes" id="voterReferredByAnExistingUser" class="custom-control-input" <?php if($questionLAAdHReferredByAnExistingUser): ?>checked="checked"<?php endif; ?> />
+							<label for="voterReferredByAnExistingUser" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.ReferredByAnExistingUser'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[Other]" id="voterOther" class="custom-control-input" <?php if($questionLAAdHOther): ?>checked="checked"<?php endif; ?> />
+							<label for="voterOther" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.Other'); ?></label>
+						</div>
+					</div>
+				</div>
+				<div id="row-voterOther" class="form-row<?php if(!$questionLAAdHOther): ?> d-none<?php endif; ?>">
+					<div class="col-6">
+						<input type="text" name="questionLAAdH[Other]" value="<?php echo htmlspecialchars($questionLAAdHOtherField); ?>" class="form-control mt-1" <?php if(!$questionLAAdHOther): ?>disabled="disabled"<?php endif; ?> />
+						<div class="line-gradient"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15 d-none">
+		<div class="col-12">
+			<div class="form-group">
+				<input type="text" name="category" placeholder="<?php echo Language::translate('form.category'); ?>" class="form-control" />
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15 last">
+		<div class="col-auto">
+			<button class="btn btn-primary" type="submit">
+				<span><?php echo Language::translate('btn.join.adhash.now'); ?></span>
+			</button>
+		</div>
+	</div>
+</form>

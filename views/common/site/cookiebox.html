@@ -1,0 +1,15 @@
+<div class="cookie-box">
+	<p>
+		This website uses cookies to analyse usage, enhance functionality, and personalise your experience.
+		By closing this pop up or continuing to browse, you agree to the use of cookies.
+	</p>
+	<a href="<?php echo SITE_URL; ?>/privacy-policy.html" target="_blank">Read more and edit preferences</a>
+	<div class="xbtn"></div>
+	<script>
+		cookieBoxInit(
+			'<?php echo $cookieBoxKey; ?>',
+			<?php echo $cookieBoxValue; ?>,
+			<?php echo $cookieBoxExdays; ?>
+		);
+	</script>
+</div>

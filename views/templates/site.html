@@ -1,0 +1,13 @@
+<?php include(COMMON_FOLDER . DS . 'site' . DS . 'head.html'); ?>
+<body>
+	<?php include(COMMON_FOLDER . DS . 'site' . DS . 'header.html'); ?>
+	<main>
+		<?php if($showCookieBox): ?>
+			<?php include(COMMON_FOLDER . DS . 'site' . DS . 'cookiebox.html'); ?>
+		<?php endif; ?>
+		<?php $this->body(); ?>
+		<?php include(COMMON_FOLDER . DS . 'site' . DS . 'analytics.html'); ?>
+	</main>
+	<?php include(COMMON_FOLDER . DS . 'site' . DS . 'footer.html'); ?>
+</body>
+</html>

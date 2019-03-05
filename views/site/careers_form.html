@@ -1,0 +1,104 @@
+<section id="careers-form" class="section full-page form-page">
+	<header class="section-header">
+		<h1 class="section-title"><?php echo Language::translate('careers.form.title.'.$form); ?></h1>
+		<div class="new-line"></div>
+		<p class="section-description"><?php echo Language::translate('careers.form.description'); ?></p>
+	</header>
+	<div class="section-container">
+		<form action="<?php echo SITE_URL; ?>/site/careers/<?php echo $form; ?>.html" method="post" enctype="multipart/form-data" autocomplete="off" class="container">
+			<div class="row border-offset-15">
+				<div class="col-6">
+					<div class="form-group">
+						<label for="name"><?php echo Language::translate('form.name'); ?>:</label>
+						<?php
+							$name = isset($_POST['name']) ? $_POST['name'] : '';
+							$nameErrorMSG = !empty($errorValidation['name']) ? $errorValidation['name'] : '';
+						?>
+						<input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>" id="name" class="form-control<?php if($nameErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="nameHelp" />
+						<div class="line-gradient"></div>
+						<small id="nameHelp" class="invalid-feedback" data-target="name"><?php echo $nameErrorMSG; ?></small>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label for="contactNumber"><?php echo Language::translate('form.contactNumber'); ?>:</label>
+						<?php
+							$contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
+							$contactNumberErrorMSG = !empty($errorValidation['contactNumber']) ? $errorValidation['contactNumber'] : '';
+						?>
+						<input type="text" name="contactNumber" value="<?php echo htmlspecialchars($contactNumber); ?>" id="contactNumber" class="form-control<?php if($contactNumberErrorMSG): ?> is-invalid<?php endif; ?>" pattern="[0-9\.\-\s\(\)]{5,}" aria-describedby="contactNumberHelp" />
+						<div class="line-gradient"></div>
+						<small id="contactNumberHelp" class="invalid-feedback" data-target="contactNumber"><?php echo $contactNumberErrorMSG; ?></small>
+					</div>
+				</div>
+			</div>
+			<div class="row border-offset-15">
+				<div class="col-6">
+					<div class="form-group">
+						<label for="emailAddress"><?php echo Language::translate('form.emailAddress'); ?>:</label>
+						<?php
+							$emailAddress = isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '';
+							$emailAddressErrorMSG = !empty($errorValidation['emailAddress']) ? $errorValidation['emailAddress'] : '';
+						?>
+						<input type="text" name="emailAddress" value="<?php echo htmlspecialchars($emailAddress); ?>" id="emailAddress" class="form-control<?php if($emailAddressErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="emailAddressHelp" />
+						<div class="line-gradient"></div>
+						<small id="emailAddressHelp" class="invalid-feedback" data-target="emailAddress"><?php echo $emailAddressErrorMSG; ?></small>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label for="files">
+							<?php echo Language::translate('form.uploadFiles'); ?>:
+							<span class="o-075"><?php echo Language::translate('form.optional'); ?></span>
+						</label>
+						<?php
+							$filesErrorMSG = !empty($errorValidation['files']) ? $errorValidation['files'] : '';
+						?>
+						<div class="input-group">
+							<input type="text" placeholder="*.jpg, *.jpeg, *.png, *.doc, *.pdf" class="form-control<?php if($filesErrorMSG): ?> is-invalid<?php endif; ?>" readonly="readonly" aria-describedby="filesHelp" />
+							<div class="input-group-append">
+								<label class="btn btn-file">
+									<?php echo Language::translate('btn.browse'); ?>
+									<input type="file" name="files[]" multiple="multiple" id="files" accept=".jpg, .jpeg, .png, .doc, .docx, .pdf" />
+								</label>
+							</div>
+							<div class="line-gradient"></div>
+						</div>
+						<small id="filesHelp" class="invalid-feedback" data-target="files[]"><?php echo $filesErrorMSG; ?></small>
+					</div>
+				</div>
+			</div>
+			<div class="row border-offset-15 d-none">
+				<div class="col-12">
+					<div class="form-group">
+						<input type="text" name="category" placeholder="<?php echo Language::translate('form.category'); ?>" class="form-control" />
+					</div>
+				</div>
+			</div>
+			<div class="row border-offset-15">
+				<div class="col-12">
+					<div class="form-group">
+						<label for="message"><?php echo Language::translate('form.message'); ?>:</label>
+						<?php
+							$message = isset($_POST['message']) ? $_POST['message'] : '';
+							$messageErrorMSG = !empty($errorValidation['message']) ? $errorValidation['message'] : '';
+						?>
+						<textarea name="message" id="message" class="form-control max-h-400px<?php if($messageErrorMSG): ?> is-invalid<?php endif; ?>" rows="3" aria-describedby="messageHelp"><?php echo htmlspecialchars($message); ?></textarea>
+						<div class="line-gradient"></div>
+						<small id="messageHelp" class="invalid-feedback" data-target="message"><?php echo $messageErrorMSG; ?></small>
+					</div>
+				</div>
+			</div>
+			<div class="row border-offset-15 last">
+				<div class="col-auto">
+					<button class="btn btn-primary" type="submit">
+						<span><?php echo Language::translate('btn.submit.application'); ?></span>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script>
+		formCategoryInit();
+	</script>
+</section>

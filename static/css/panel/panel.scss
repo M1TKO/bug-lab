@@ -1,0 +1,35 @@
+@for $i from 1 through 3 {
+  .item_#{$i} {
+    width: $i * 100px;
+  }
+}
+
+
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		width: $i / 12 * 100%;
+	}
+}
+
+@for $i from 1 through 12 {
+  @media screen and (min-width: $i * 240px) {
+    width: $i * 240px + (20*($i - 1));
+  }
+}
+
+$list: uxd, rails, html, css, 250, 456;
+
+@each $class in $list {
+	.#{$class}-logo {
+		background: url("/img/#{$class}.jpg");
+	}
+}
+
+@each $width in 250px, 300px, 400px {
+	@media screen and (max-width: $width) {
+		.asd {
+			width: 100px;
+		}
+	}
+}
+

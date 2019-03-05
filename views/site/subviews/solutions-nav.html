@@ -1,0 +1,17 @@
+<?php
+	$solutions = array(
+		'Users',
+		'Publishers',
+		'Advertisers',
+		'Ad tech providers'
+	);
+?>
+<div class="list-group solutions-nav">
+	<?php foreach($solutions as $solution): ?>
+		<?php $solutionViewAndSVGName = str_replace(' ', '-', strtolower($solution)); ?>
+		<a id="solution-<?php echo $solutionViewAndSVGName; ?>-icon" class="list-group-item d-flex align-items-center page-open" href="<?php echo SITE_URL; ?>/solutions-for-<?php echo $solutionViewAndSVGName; ?>.html">
+			<img src="<?php echo SITE_URL; ?>/static/images/solutions/nav/<?php echo $solutionViewAndSVGName; ?>.svg" alt="<?php echo $solution; ?>" width="30" height="30" class="mr-2" />
+			<?php echo $solution; ?>
+		</a>
+	<?php endforeach; ?>
+</div>

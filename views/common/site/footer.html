@@ -1,0 +1,123 @@
+<footer id="footer">
+	<div class="row last">
+		<div id="footer-left" class="col">
+			<div class="row last">
+				<div class="col-4">
+					<div class="footer-header">
+						<h4 class="footer-title"><?php echo Language::translate('footer.title.about'); ?></h4>
+					</div>
+					<ul class="footer-nav list-unstyled">
+						<li>
+							<a href="<?php echo SITE_URL; ?>/">
+								<?php echo Language::translate('nav.home'); ?>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo SITE_URL; ?>/careers.html">
+								<?php echo Language::translate('nav.pricing'); ?>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo SITE_URL; ?>/privacy-policy.html">
+								<?php echo Language::translate('nav.privacy-policy'); ?>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<div class="footer-header">
+						<h4 class="footer-title"><?php echo Language::translate('footer.title.integrations'); ?></h4>
+					</div>
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://www.atlassian.com/software/jira" target="_blank">
+								Jira
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com" target="_blank">
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://slack.com" target="_blank">
+								Slack
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<div class="footer-header">
+						<h4 class="footer-title"><?php echo Language::translate('footer.title.learn.more'); ?></h4>
+					</div>
+					<ul class="list-unstyled">
+						<li>Find out more about us at:</li>
+						<li id="socials">
+							<?php
+								$socials = array(
+									'medium' => 'https://medium.com/@adhash',
+									/*'github' => 'https://github.com/AdHashProtocol',
+									'telegram' => 'https://t.me/adhash',*/
+									'facebook' => 'https://www.facebook.com/AdHashProtocol'
+								);
+							?>
+							<?php foreach($socials as $socialName => $socialURL): ?>
+								<a href="<?php echo $socialURL; ?>" target="_blank">
+									<?php echo file_get_contents(ROOT_FOLDER . DS . 'static' . DS . 'images' . DS . 'socials' . DS . $socialName . '.svg'); ?>
+								</a>
+							<?php endforeach; ?>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer-right" class="col">
+			<div class="footer-header">
+				<h4 class="footer-title"><?php echo Language::translate('footer.title.contact.us'); ?></h4>
+			</div>
+			<form id="contact-us" action="<?php echo SITE_URL; ?>/contact-us.html" method="post" autocomplete="off">
+				<div class="row border-offset-10 last">
+					<div class="col-6">
+						<div class="form-group">
+							<input type="text" name="subject" placeholder="<?php echo Language::translate('form.subject'); ?>" class="form-control" required="required" />
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<input type="text" name="name" placeholder="<?php echo Language::translate('form.name'); ?>" class="form-control" required="required" />
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<input type="text" name="emailAddress" placeholder="<?php echo Language::translate('form.emailAddress'); ?>" class="form-control" required="required" />
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<input type="text" name="phoneNumber" placeholder="<?php echo Language::translate('form.phoneNumber'); ?>" class="form-control" required="required" pattern="[0-9\.\-\s\(\)]{5,}" />
+						</div>
+					</div>
+					<div class="col-12 d-none">
+						<div class="form-group">
+							<input type="text" name="category" placeholder="<?php echo Language::translate('form.category.placeholder'); ?>" class="form-control" />
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="form-group">
+							<div class="input-group">
+								<textarea name="message" placeholder="<?php echo Language::translate('form.message'); ?>" rows="3" class="form-control max-h-200px" required="required"></textarea>
+								<button class="input-group-addon btn">
+									<span><?php echo Language::translate('btn.send'); ?></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		footerMenuInit();
+		formCategoryInit();
+	</script>
+</footer>

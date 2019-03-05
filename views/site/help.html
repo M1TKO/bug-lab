@@ -1,0 +1,362 @@
+<section id="help" class="section full-page single-page">
+	<header class="section-header parallax">
+		<div class="section-header-group text-center">
+			<h1 class="section-title">Help</h1>
+		</div>
+		<img src="<?php echo SITE_URL; ?>/static/images/pages/headers/help.png" alt="Help" class="mb-0 d-none d-md-block" />
+		<img src="<?php echo SITE_URL; ?>/static/images/pages/headers/help-mobile.png" alt="Help" class="d-md-none" />
+	</header>
+	<div class="section-container">
+		<div class="container">
+			<div class="row last panel-desktop-mobile">
+				<div class="col-auto panel-desktop">
+					<div class="list-group" role="tablist">
+						<div class="list-group-item<?php if($tab == 'general'): ?> active<?php endif; ?>" role="tab" data-toggle="tab" data-target="#desktop-general">
+							General
+						</div>
+						<div class="list-group-item<?php if($tab == 'ad-quality'): ?> active<?php endif; ?>" role="tab" data-toggle="tab" data-target="#desktop-ad-quality">
+							Ad quality
+						</div>
+						<div class="list-group-item<?php if($tab == 'protocol-related'): ?> active<?php endif; ?>" role="tab" data-toggle="tab" data-target="#desktop-protocol-related">
+							Protocol-related
+						</div>
+						<div class="list-group-item<?php if($tab == 'integration'): ?> active<?php endif; ?>" role="tab" data-toggle="tab" data-target="#desktop-integration">
+							Integration
+						</div>
+					</div>
+				</div>
+				<div class="col panel-mobile">
+					<div id="accordion-help-themes" class="tab-content">
+						<div id="desktop-general" class="panel panel-main tab-pane<?php if($tab == 'general'): ?> active show<?php endif; ?>">
+							<div class="panel-heading">
+								<h2 class="panel-title">
+									<a class="collapsed" href="#general" data-toggle="collapse">
+										General
+									</a>
+									<i class="plus-minus-rotate no-hover" role="link" data-target="#general" data-toggle="collapse"></i>
+								</h2>
+							</div>
+							<div id="general" class="panel-body panel-collapse collapse show" data-parent="#accordion-help-themes">
+								<div id="accordion-general" class="panel-group">
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'general-adhash-commission'): ?>class="collapsed"<?php endif; ?> href="#general-adhash-commission" data-toggle="collapse">
+													AdHash's commission
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#general-adhash-commission" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="general-adhash-commission" class="panel-body panel-collapse collapse<?php if($panel == 'general-adhash-commission'): ?> show<?php endif; ?>" data-parent="#accordion-general">
+											<p>In the current advertising ecosystem, as much as 80% of advertisers’ budgets is spent on middleware, mediation, and fraud prevention. Very little accounts for actual media buying. AdHash helps advertisers and publishers retain more of the value for themselves by reducing all intermediary fees to a single 3% commission which is public and verifiable through the AdHash Bidder public node.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'general-deposits'): ?>class="collapsed"<?php endif; ?> href="#general-deposits" data-toggle="collapse">
+													Deposits
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#general-deposits" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="general-deposits" class="panel-body panel-collapse collapse<?php if($panel == 'general-deposits'): ?> show<?php endif; ?>" data-parent="#accordion-general">
+											<p>To minimise malicious behaviour and ensure that participants act in the collective self-interest, we have a deposit system in place. The deposits represent each participant’s skin in the game and may be withheld in the event of a policy breach. There are three types of deposits:</p>
+											<p class="arrow-gradient o-075"><b>Advertiser deposit:</b> required upon campaign launch. The size of the deposit equals five times the planned daily ad spend. To launch their campaign, advertisers must first meet the deposit requirements corresponding with their daily campaign budget. Advertisers may lose their deposit in the event of a policy breach or non-payment.</p>
+											<p class="arrow-gradient o-075"><b>Publisher deposit:</b> publishers are not required to submit an initial deposit. Instead, their earnings from minting (paid once every 14 days) serve as a collateral and may be withheld in the event of a policy breach.</p>
+											<p class="arrow-gradient o-075"><b>Block request deposit:</b> To submit a block request you will need an AdHash account and AD Token deposit. If your request is approved, the ad will be permanently removed from the system and you will receive your deposit back plus an additional reward for improving the quality of ads on AdHash. If denied, the ad will not be blocked and your deposit will be withheld. This helps us prevent spam and unnecessary block requests.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'general-targeting'): ?>class="collapsed"<?php endif; ?> href="#general-targeting" data-toggle="collapse">
+													Targeting
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#general-targeting" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="general-targeting" class="panel-body panel-collapse collapse<?php if($panel == 'general-targeting'): ?> show<?php endif; ?>" data-parent="#accordion-general">
+											<p>AdHash puts users at the forefront. We believe advertising should provide meaningful information while respecting people’s privacy. This is why we replace intrusive targeting with hard data targeting and we are completely opened about the information we use.</p>
+											<p>The AdHash Bidder targets URLs, app IDs, ISPs, time zones, operating systems, browser versions, geolocations, screen sizes, connection types, device models, and other data that are directly measurable and verifiable. We call these <i>hard data</i>. The bidder does not use any approximated, probabilistic, or purchased third-party data. We call these <i>soft data</i>.</p>
+											<p>Hard data targeting allows advertisers to engage users in a non-intrusive way. It also provides more reliable data, which in turn allows for more predictable outcomes and valuable insights.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'general-analytics'): ?>class="collapsed"<?php endif; ?> href="#general-analytics" data-toggle="collapse">
+													Analytics
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#general-analytics" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="general-analytics" class="panel-body panel-collapse collapse<?php if($panel == 'general-analytics'): ?> show<?php endif; ?>" data-parent="#accordion-general">
+											<p>The AdHash Server-Side Platform interface equips both publishers and advertisers with a comprehensive set of control tools. Advertisers can set CPC caps, blacklists, frequency and recency capping. Publishers can request new ad unit tags and implement price floors and blacklists. The platform allows all participants to adjust storage allocation, maximum gas prices, and participate in the AdHash Voting System. It also provides quick insights, granular reports, and real-time data updated every five seconds.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="desktop-ad-quality" class="panel panel-main tab-pane<?php if($tab == 'ad-quality'): ?> active show<?php endif; ?>">
+							<div class="panel-heading">
+								<h2 class="panel-title">
+									<a class="collapsed" href="#ad-quality" data-toggle="collapse">
+										Ad quality
+									</a>
+									<i class="plus-minus-rotate no-hover" role="link" data-target="#ad-quality" data-toggle="collapse"></i>
+								</h2>
+							</div>
+							<div id="ad-quality" class="panel-body panel-collapse collapse" data-parent="#accordion-help-themes">
+								<div id="accordion-ad-quality" class="panel-group">
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'ad-quality-ad-fraud'): ?>class="collapsed"<?php endif; ?> href="#ad-quality-ad-fraud" data-toggle="collapse">
+													Ad fraud
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#ad-quality-ad-fraud" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="ad-quality-ad-fraud" class="panel-body panel-collapse collapse<?php if($panel == 'ad-quality-ad-fraud'): ?> show<?php endif; ?>" data-parent="#accordion-ad-quality">
+											<p>The AdHash Protocol is designed to eliminate the majority of ad fraud vectors. Here is how we address some of the more common ones:</p>
+											<p class="arrow-gradient o-075"><b>Geolocation masking:</b> This scheme diverts ad spend from target geolocations to irrelevant geolocations typically with lower CPMs. Advertisers may think they are, for example, buying ads in the UK which is their target market, when in reality their ads are never displayed to UK users. The advertiser is still charged premium CPMs for traffic that costs considerably less while the fraudsters pocket the difference. <br/>With AdHash, no more ad budgets will be wasted on geolocation masking. This is achieved by encrypting the advertiser’s target criteria in the creative. This way, the ad can only be decrypted if the criteria match the user’s characteristics. If the user is located elsewhere, the ad will not be clickable and the advertiser will not be charged.</p>
+											<p class="arrow-gradient o-075"><b>Domain spoofing, Methbot and Hyphbot-like operations:</b> The Unique Hash IDs allow us to divert earnings generated by domain spoofing to the wallet IDs of the intended publishers. This way fraudsters will no loner be able to profit.</p>
+											<p class="arrow-gradient o-075"><b>Traffic arbitrage:</b> By removing  the middlemen and making all identities verifiable through the blockchain, we also eliminate the risk of traffic arbitrage.</p>
+											<p class="arrow-gradient o-075"><b>Click farms, accidental clicks, and bot traffic:</b> The AdHash heat map analysis tool allows advertisers to detect fake and accidental clicks and verify the quality of their traffic. Click coordinates are recorded for every click and their location can be used to indicate bot activity.</p>
+											<p class="arrow-gradient o-075"><b>Malvertising:</b> AdHash only serves static creatives without any third-party scripts. This vastly reduces the risk of malvertising and ensures a more seamless advertising experience.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'ad-quality-creatives'): ?>class="collapsed"<?php endif; ?> href="#ad-quality-creatives" data-toggle="collapse">
+													Creatives
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#ad-quality-creatives" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="ad-quality-creatives" class="panel-body panel-collapse collapse<?php if($panel == 'ad-quality-creatives'): ?> show<?php endif; ?>" data-parent="#accordion-ad-quality">
+											<div class="panel-group">
+												<div class="panel">
+													<div class="panel-heading">
+														<h4 class="panel-title">Static ads</h4>
+													</div>
+													<div class="panel-body">
+														<p>To facilitate a better user experience, AdHash removes the disruptive ad formats and third-party tracking scripts. We run beautifully-designed script-free static creatives which do not distract from the content and allow for much quicker page loading times.</p>
+													</div>
+												</div>
+												<div class="panel">
+													<div class="panel-heading">
+														<h4 class="panel-title">No lengthly creative approvals</h4>
+													</div>
+													<div class="panel-body">
+														<p>To help advertisers get their campaigns off the ground in no time, we have removed the cumbersome and often inefficient creative approval process. In most existing advertising platforms, creatives are subject to independent approval by each individual ad exchange. Across the exchanges, the approval process could take from a few hours to over a week. This often leads to delays in campaign launching and is largely ineffective as inappropriate ads still manage to slip through the cracks.</p>
+														<p>To streamline the process, at AdHash we concentrate our human capital on identifying and removing the abusers, rather than wasting time on proactively checking all users. The systems and processes which we have put in place can be divided into:</p>
+														<p class="arrow-gradient o-075"><b>Proactive:</b> A combination of vision APIs is used to check all creatives and signal potential problems. Voters can then review any potentially problematic creatives before they go live.</p>
+														<p class="arrow-gradient o-075"><b>Reactive:</b> All participants can flag or block creatives they find inappropriate. The voting community reviews all block requests and frequently flagged ads to ensure a clean and safe advertising environment.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'ad-quality-ad-quality-control'): ?>class="collapsed"<?php endif; ?> href="#ad-quality-ad-quality-control" data-toggle="collapse">
+													Ad quality control
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#ad-quality-ad-quality-control" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="ad-quality-ad-quality-control" class="panel-body panel-collapse collapse<?php if($panel == 'ad-quality-ad-quality-control'): ?> show<?php endif; ?>" data-parent="#accordion-ad-quality">
+											<p>Have you tried to block an ad from your AdChoices only to see that same ad five minutes later?  The lack of unified ad creative IDs means that the current AdChoices tools don’t really give users any choice.</p>
+											<p>The Ad quality control tools are designed to change this. Our adoption of Unique Hash Creative and Advertiser IDs enables users to effectively remove undesired ads and advertisers. The Ad quality control icon in the upper right corner of each creative features two options: FLAG and BLOCK.</p>
+											<br/>
+											<div class="row border-offset-10 justify-content-center">
+												<div class="col-auto">
+													<img src="<?php echo SITE_URL; ?>/static/images/pages/adhash-creative-300x250.png" alt="AdHash creative 300x250" />
+												</div>
+												<div class="col-auto">
+													<img src="<?php echo SITE_URL; ?>/static/images/pages/adhash-creative-300x250-quality-control.png" alt="AdHash creative 300x250 quality control" />
+												</div>
+											</div>
+											<div class="row border-offset-10 justify-content-center">
+												<div class="col-auto">
+													<img src="<?php echo SITE_URL; ?>/static/images/pages/adhash-creative-300x250-quality-control-flag.png" alt="AdHash creative 300x250 quality control flag" />
+												</div>
+												<div class="col-auto">
+													<img src="<?php echo SITE_URL; ?>/static/images/pages/adhash-creative-300x250-quality-control-block.png" alt="AdHash creative 300x250 quality control block" />
+												</div>
+											</div>
+											<br/>
+											<p>Flagging an ad removes it from your personal browsing experience. Ads flagged multiple times by different users in a short period of time will be reviewed by the voting community and if found inappropriate, will be removed on a network level.</p>
+											<p>Block requests, on the other hand, directly trigger a review from the voting community. To submit a block request you will need an AdHash account and AD deposit. If your request is approved, the ad will be permanently removed from the system and you will receive your deposit back, plus an additional reward for improving the quality of ads on AdHash. If denied, the ad will not be blocked and your deposit will be withheld. This helps us prevent spam and unnecessary block requests. </p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'ad-quality-heat-maps'): ?>class="collapsed"<?php endif; ?> href="#ad-quality-heat-maps" data-toggle="collapse">
+													Heat map
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#ad-quality-heat-maps" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="ad-quality-heat-maps" class="panel-body panel-collapse collapse<?php if($panel == 'ad-quality-heat-maps'): ?> show<?php endif; ?>" data-parent="#accordion-ad-quality">
+											<div class="row last">
+												<div class="col">
+													<p>Advertisers can leverage the Heat maps available in their Server-Side Platform to detect bot traffic and accidental clicks. The coordinates for each click are recorded and the click density visualised in an interactive overlay. Click bots typically produce random noise or a concentration of clicks in certain areas (usually in the top left pixel). In the absence of bot traffic, clicks should be concentrated on CTA buttons, logos, and parts of the creative that attract more attention.</p>
+												</div>
+												<div class="col-auto">
+													<img src="<?php echo SITE_URL; ?>/static/images/pages/adhash-admin-panel-mobile-preview.jpg" alt="Phone image" width="140" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'ad-quality-ad-blockers'): ?>class="collapsed"<?php endif; ?> href="#ad-quality-ad-blockers" data-toggle="collapse">
+													Ad blockers
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#ad-quality-ad-blockers" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="ad-quality-ad-blockers" class="panel-body panel-collapse collapse<?php if($panel == 'ad-quality-ad-blockers'): ?> show<?php endif; ?>" data-parent="#accordion-ad-quality">
+											<p>Intrusive ads have pushed many towards ad blockers, distancing advertisers from their audiences.</p>
+											<p>We believe that a better and more meaningful advertising experience can halt the rise of ad blockers and enable marketers to engage more successfully with customers. This is why we have taken steps to remove repetitive ads, disruptive ad formats, and intrusive ad targeting.</p>
+											<p>For those who want an ad-free browsing experience, we also have a solution. AdHash is the first platform to enable users to bid against advertisers. All you need is a wallet ID and you can remove all AdHash ads from your browsing experience without hurting your favourite publishers.</p>
+											<p>To get started, please complete the <a href="<?php echo SITE_URL; ?>/site/join-form/user.html">join form for users</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="desktop-protocol-related" class="panel panel-main tab-pane<?php if($tab == 'protocol-related'): ?> active show<?php endif; ?>">
+							<div class="panel-heading">
+								<h2 class="panel-title">
+									<a class="collapsed" href="#protocol-related" data-toggle="collapse">
+										Protocol-related
+									</a>
+									<i class="plus-minus-rotate no-hover" role="link" data-target="#protocol-related" data-toggle="collapse"></i>
+								</h2>
+							</div>
+							<div id="protocol-related" class="panel-body panel-collapse collapse" data-parent="#accordion-help-themes">
+								<div id="accordion-protocol-related" class="panel-group">
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'protocol-related-unique-hash-ids'): ?>class="collapsed"<?php endif; ?> href="#protocol-related-unique-hash-ids" data-toggle="collapse">
+													Unique Hash IDs
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#protocol-related-unique-hash-ids" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="protocol-related-unique-hash-ids" class="panel-body panel-collapse collapse<?php if($panel == 'protocol-related-unique-hash-ids'): ?> show<?php endif; ?>" data-parent="#accordion-protocol-related">
+											<p>Many of the problems in today’s advertising ecosystem stem from the absence of a universally recognised identification system across players. Advertisers bid in multiple ad exchanges under multiple identities and this leads to double-bidding inefficiencies, data discrepancies, and lack of accountability and user control.</p>
+											<p>To eliminate these problems, AdHash generates a Unique Hash ID for each advertiser, creative, and publisher. The IDs are recorded on the blockchain so that all participants and creatives can be easily verified. This strengthens the security of the ecosystem as abusers can be quickly identified and banned. It prevents double-bidding as advertisers will no longer have multiple identities outbidding one another. The creative hash IDs, on the other hand, help to eliminate ad repetition on the same page and allow users to effectively block ads they do not wish to see.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'protocol-related-scalability'): ?>class="collapsed"<?php endif; ?> href="#protocol-related-scalability" data-toggle="collapse">
+													Scalability
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#protocol-related-scalability" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="protocol-related-scalability" class="panel-body panel-collapse collapse<?php if($panel == 'protocol-related-scalability'): ?> show<?php endif; ?>" data-parent="#accordion-protocol-related">
+											<p>Micro transactions are performed off-chain. This reduces the blockchain transaction costs and sidesteps its current scalability limitations, making the AdHash blockchain framework uniquely suited to the high-speed transactions of real-time bidding advertising.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'protocol-related-security'): ?>class="collapsed"<?php endif; ?> href="#protocol-related-security" data-toggle="collapse">
+													Security
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#protocol-related-security" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="protocol-related-security" class="panel-body panel-collapse collapse<?php if($panel == 'protocol-related-security'): ?> show<?php endif; ?>" data-parent="#accordion-protocol-related">
+											<p>AdHash combines blockchain and off-chain transactions to offer transparency while maintaining a level of privacy. Detailed transaction data is stored off-chain and only on the advertiser and publisher local server.</p>
+											<p>The application of off-chain transactions and public-key cryptography, on the other hand, ensure that any sensitive information such as media buying patterns and bidding strategies remains private.</p>
+										</div>
+									</div>
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'protocol-related-faster-ad-serving'): ?>class="collapsed"<?php endif; ?> href="#protocol-related-faster-ad-serving" data-toggle="collapse">
+													Faster ad serving
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#protocol-related-faster-ad-serving" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="protocol-related-faster-ad-serving" class="panel-body panel-collapse collapse<?php if($panel == 'protocol-related-faster-ad-serving'): ?> show<?php endif; ?>" data-parent="#accordion-protocol-related">
+											<p>Slow ad serving impacts viewability. If the ad does not load, it cannot be seen. The AdHash algorithmic improvements reduce the ad request load on each server by up to two orders of magnitude. This makes ad serving approximately ten times faster. Removing heavy ad formats and third-party scripts further minimises the ad loading time, making ads less heavy on your hardware.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="desktop-integration" class="panel panel-main tab-pane<?php if($tab == 'integration'): ?> active show<?php endif; ?>">
+							<div class="panel-heading">
+								<h2 class="panel-title">
+									<a class="collapsed" href="#integration" data-toggle="collapse">
+										Integration
+									</a>
+									<i class="plus-minus-rotate no-hover" role="link" data-target="#integration" data-toggle="collapse"></i>
+								</h2>
+							</div>
+							<div id="integration" class="panel-body panel-collapse collapse" data-parent="#accordion-help-themes">
+								<div id="accordion-integration" class="panel-group">
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a <?php if($panel != 'integration-compatibility'): ?>class="collapsed"<?php endif; ?> href="#integration-compatibility" data-toggle="collapse">
+													Compatibility
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#integration-compatibility" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="integration-compatibility" class="panel-body panel-collapse collapse<?php if($panel == 'integration-compatibility'): ?> show<?php endif; ?>" data-parent="#accordion-integration">
+											<p>We open-sourced AdHash so that anyone can plug in, build on top of it, and benefit from improving and diversifying its services. We welcome ad tech providers to integrate their services with the AdHash Protocol. Here is what we offer:</p>
+											<ul class="arrow-gradient o-075">
+												<li>Seamless integration via Open RTB 3.0.</li>
+												<li>GNU GPLv3 licensed open-source code enables continuous innovation and improvement.</li>
+												<li>Autonomy on the AdHash framework and freedom to set your own commissions, policies, and terms of operation.</li>
+											</ul>
+											<?php /*
+											<p>Download the Integration package and get started!</p>
+											*/ ?>
+										</div>
+									</div>
+									<?php /*
+									<div class="panel">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<a class="collapsed" href="#integration-installing-the-adhash-server-side-platform" data-toggle="collapse">
+													Installing the AdHash Server-Side Platform
+												</a>
+												<i class="plus-minus-rotate no-hover" role="link" data-target="#integration-installing-the-adhash-server-side-platform" data-toggle="collapse"></i>
+											</h3>
+										</div>
+										<div id="integration-installing-the-adhash-server-side-platform" class="panel-body panel-collapse collapse" data-parent="#accordion-integration">
+										</div>
+									</div>
+									*/ ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		headerParallaxInit();
+		responsivePanels();
+	</script>
+</section>

@@ -1,0 +1,229 @@
+<form action="<?php echo SITE_URL; ?>/site/join-form/advertiser.html" method="post" autocomplete="off" role="tabpanel" id="advertiser" class="tab-pane<?php if($form == 'advertiser'): ?> show active<?php endif; ?>" aria-labelledby="advertiser-tab">
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="advertiserCompanyWebsite"><?php echo Language::translate('form.companyWebsite'); ?>:</label>
+				<?php
+					$companyWebsite = ($form == 'advertiser' && isset($_POST['companyWebsite']) ? $_POST['companyWebsite'] : '');
+					$companyWebsiteErrorMSG = ($form == 'advertiser' && !empty($errorValidation['companyWebsite']) ? $errorValidation['companyWebsite'] : '');
+				?>
+				<input type="text" name="companyWebsite" value="<?php echo htmlspecialchars($companyWebsite); ?>" id="advertiserCompanyWebsite" class="form-control<?php if($companyWebsiteErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="companyWebsiteAdvertiserHelp" />
+				<div class="line-gradient"></div>
+				<small id="companyWebsiteAdvertiserHelp" class="invalid-feedback"><?php echo $companyWebsiteErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="advertiserContactName"><?php echo Language::translate('form.contactName'); ?>:</label>
+				<?php
+					$contactName = ($form == 'advertiser' && isset($_POST['contactName']) ? $_POST['contactName'] : '');
+					$contactNameErrorMSG = ($form == 'advertiser' && !empty($errorValidation['contactName']) ? $errorValidation['contactName'] : '');
+				?>
+				<input type="text" name="contactName" value="<?php echo htmlspecialchars($contactName); ?>" id="advertiserContactName" class="form-control<?php if($contactNameErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="contactNameAdvertiserHelp" />
+				<div class="line-gradient"></div>
+				<small id="contactNameAdvertiserHelp" class="invalid-feedback"><?php echo $contactNameErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="advertiserContactNumber"><?php echo Language::translate('form.contactNumber'); ?>:</label>
+				<?php
+					$contactNumber = ($form == 'advertiser' && isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '');
+					$contactNumberErrorMSG = ($form == 'advertiser' && !empty($errorValidation['contactNumber']) ? $errorValidation['contactNumber'] : '');
+				?>
+				<input type="text" name="contactNumber" value="<?php echo htmlspecialchars($contactNumber); ?>" id="advertiserContactNumber" class="form-control<?php if($contactNumberErrorMSG): ?> is-invalid<?php endif; ?>" pattern="[0-9\.\-\s\(\)]{5,}" aria-describedby="contactNumberAdvertiserHelp" />
+				<div class="line-gradient"></div>
+				<small id="contactNumberAdvertiserHelp" class="invalid-feedback"><?php echo $contactNumberErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="advertiserEmailAddress"><?php echo Language::translate('form.emailAddress'); ?>:</label>
+				<?php
+					$emailAddress = ($form == 'advertiser' && isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '');
+					$emailAddressErrorMSG = ($form == 'advertiser' && !empty($errorValidation['emailAddress']) ? $errorValidation['emailAddress'] : '');
+				?>
+				<input type="text" name="emailAddress" value="<?php echo htmlspecialchars($emailAddress); ?>" id="advertiserEmailAddress" class="form-control<?php if($emailAddressErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="emailAddressAdvertiserHelp" />
+				<div class="line-gradient"></div>
+				<small id="emailAddressAdvertiserHelp" class="invalid-feedback"><?php echo $emailAddressErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="advertiserCountry"><?php echo Language::translate('form.country'); ?>:</label>
+				<?php
+					$country = ($form == 'advertiser' && isset($_POST['country']) ? $_POST['country'] : '');
+					$countryErrorMSG = ($form == 'advertiser' && !empty($errorValidation['country']) ? $errorValidation['country'] : '');
+				?>
+				<select name="country" id="advertiserCountry" class="form-control custom-select<?php if($countryErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="countryAdvertiserHelp">
+					<option value=""><?php echo Language::translate('form.country.select'); ?></option>
+					<?php $countries = CountriesHelper::$countries; ?>
+					<?php foreach($countries as $countryCode => $countryName): ?>
+						<option value="<?php echo $countryCode; ?>" <?php if($country == $countryCode): ?>selected="selected"<?php endif; ?>>
+							<?php echo $countryName; ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
+				<div class="line-gradient"></div>
+				<small id="countryAdvertiserHelp" class="invalid-feedback"><?php echo $countryErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="advertiserPaidMonthlyClicks">
+					<?php echo Language::translate('form.paidMonthlyClicks'); ?>:
+					<span class="o-075"><?php echo Language::translate('form.optional'); ?></span>
+				</label>
+				<?php $paidMonthlyClicks = ($form == 'advertiser' && isset($_POST['paidMonthlyClicks']) ? $_POST['paidMonthlyClicks'] : ''); ?>
+				<input type="text" name="paidMonthlyClicks" value="<?php echo htmlspecialchars($paidMonthlyClicks); ?>" id="advertiserPaidMonthlyClicks" class="form-control" pattern="[0-9]+([\.,][0-9]+)?" />
+				<div class="line-gradient"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label for="advertiserMessage"><?php echo Language::translate('form.message'); ?>:</label>
+				<?php
+					$message = ($form == 'advertiser' && isset($_POST['message']) ? $_POST['message'] : '');
+					$messageErrorMSG = ($form == 'advertiser' && !empty($errorValidation['message']) ? $errorValidation['message'] : '');
+				?>
+				<textarea name="message" id="advertiserMessage" class="form-control max-h-400px<?php if($messageErrorMSG): ?> is-invalid<?php endif; ?>" rows="3" aria-describedby="messageAdvertiserHelp"><?php echo htmlspecialchars($message); ?></textarea>
+				<div class="line-gradient"></div>
+				<small id="messageAdvertiserHelp" class="invalid-feedback"><?php echo $messageErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label><?php echo Language::translate('form.trafficType'); ?>:</label>
+				<?php
+					$trafficTypeDesktop = ($form == 'advertiser' && isset($_POST['trafficType']['Desktop']));
+					$trafficTypeMobile = ($form == 'advertiser' && isset($_POST['trafficType']['Mobile']));
+					$trafficTypeApp = ($form == 'advertiser' && isset($_POST['trafficType']['App']));
+					$trafficTypeErrorMSG = ($form == 'advertiser' && !empty($errorValidation['trafficType']) ? $errorValidation['trafficType'] : '');
+				?>
+				<div class="form-row<?php if($trafficTypeErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="trafficTypeAdvertiserHelp">
+					<div class="col-auto">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="trafficType[Desktop]" value="yes" id="advertiserTrafficTypeDesktop" class="custom-control-input" <?php if($trafficTypeDesktop): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserTrafficTypeDesktop" class="custom-control-label mb-0"><?php echo Language::translate('form.trafficType.Desktop'); ?></label>
+						</div>
+					</div>
+					<div class="col-auto">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="trafficType[Mobile]" value="yes" id="advertiserTrafficTypeMobile" class="custom-control-input" <?php if($trafficTypeMobile): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserTrafficTypeMobile" class="custom-control-label mb-0"><?php echo Language::translate('form.trafficType.Mobile'); ?></label>
+						</div>
+					</div>
+					<div class="col-auto">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="trafficType[App]" value="yes" id="advertiserTrafficTypeApp" class="custom-control-input" <?php if($trafficTypeApp): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserTrafficTypeApp" class="custom-control-label mb-0"><?php echo Language::translate('form.trafficType.App'); ?></label>
+						</div>
+					</div>
+				</div>
+				<small id="trafficTypeAdvertiserHelp" class="invalid-feedback"><?php echo $trafficTypeErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label for="advertiserSelectPlatform"><?php echo Language::translate('form.questionSSPOrCPPlatform'); ?></label>
+				<?php
+					$questionSSPOrCPPlatform = ($form == 'advertiser' && isset($_POST['questionSSPOrCPPlatform']) ? $_POST['questionSSPOrCPPlatform'] : '');
+					$questionSSPOrCPPlatformErrorMSG = ($form == 'advertiser' && !empty($errorValidation['questionSSPOrCPPlatform']) ? $errorValidation['questionSSPOrCPPlatform'] : '');
+				?>
+				<select name="questionSSPOrCPPlatform" id="advertiserSelectPlatform" class="form-control custom-select<?php if($questionSSPOrCPPlatformErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="questionSSPOrCPPlatformAdvertiserHelp">
+					<option value="">
+						<?php echo Language::translate('form.questionSSPOrCPPlatform.SelectPlatform'); ?>
+					</option>
+					<option value="AdHash Server-Side Platform" <?php if($questionSSPOrCPPlatform == 'AdHash Server-Side Platform'): ?>selected="selected"<?php endif; ?>>
+						<?php echo Language::translate('form.questionSSPOrCPPlatform.SSPPlatform'); ?></label>
+					</option>
+					<option value="AdHash Cloud Platform" <?php if($questionSSPOrCPPlatform == 'AdHash Cloud Platform'): ?>selected="selected"<?php endif; ?>>
+						<?php echo Language::translate('form.questionSSPOrCPPlatform.CPPlatform'); ?></label>
+					</option>
+				</select>
+				<div class="line-gradient"></div>
+				<small id="questionSSPOrCPPlatformAdvertiserHelp" class="invalid-feedback"><?php echo $questionSSPOrCPPlatformErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label>
+					<?php echo Language::translate('form.questionLAAdH'); ?>
+					<span class="o-075"><?php echo Language::translate('form.optional'); ?></span>
+				</label>
+				<?php
+					$questionLAAdHSawAnAd = ($form == 'advertiser' && isset($_POST['questionLAAdH']['SawAnAd']));
+					$questionLAAdHFromTheMedia = ($form == 'advertiser' && isset($_POST['questionLAAdH']['FromTheMedia']));
+					$questionLAAdHThroughOnlineResearch = ($form == 'advertiser' && isset($_POST['questionLAAdH']['ThroughOnlineResearch']));
+					$questionLAAdHReferredByAnExistingUser = ($form == 'advertiser' && isset($_POST['questionLAAdH']['ReferredByAnExistingUser']));
+					$questionLAAdHOther = ($form == 'advertiser' && isset($_POST['questionLAAdH']['Other']));
+					$questionLAAdHOtherField = ($questionLAAdHOther ? $_POST['questionLAAdH']['Other'] : '');
+				?>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[SawAnAd]" value="yes" id="advertiserSawAnAd" class="custom-control-input" <?php if($questionLAAdHSawAnAd): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserSawAnAd" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.SawAnAd'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[FromTheMedia]" value="yes" id="advertiserFromTheMedia" class="custom-control-input" <?php if($questionLAAdHFromTheMedia): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserFromTheMedia" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.FromTheMedia'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[ThroughOnlineResearch]" value="yes" id="advertiserThroughOnlineResearch" class="custom-control-input" <?php if($questionLAAdHThroughOnlineResearch): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserThroughOnlineResearch" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.ThroughOnlineResearch'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[ReferredByAnExistingUser]" value="yes" id="advertiserReferredByAnExistingUser" class="custom-control-input" <?php if($questionLAAdHReferredByAnExistingUser): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserReferredByAnExistingUser" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.ReferredByAnExistingUser'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[Other]" id="advertiserOther" class="custom-control-input" <?php if($questionLAAdHOther): ?>checked="checked"<?php endif; ?> />
+							<label for="advertiserOther" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.Other'); ?></label>
+						</div>
+					</div>
+				</div>
+				<div id="row-advertiserOther" class="form-row<?php if(!$questionLAAdHOther): ?> d-none<?php endif; ?>">
+					<div class="col-6">
+						<input type="text" name="questionLAAdH[Other]" value="<?php echo htmlspecialchars($questionLAAdHOtherField); ?>" class="form-control mt-1" <?php if(!$questionLAAdHOther): ?>disabled="disabled"<?php endif; ?> />
+						<div class="line-gradient"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15 d-none">
+		<div class="col-12">
+			<div class="form-group">
+				<input type="text" name="category" placeholder="<?php echo Language::translate('form.category'); ?>" class="form-control" />
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15 last">
+		<div class="col-auto">
+			<button class="btn btn-primary" type="submit">
+				<span><?php echo Language::translate('btn.submit.application'); ?></span>
+			</button>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,131 @@
+{
+	"_comment":"General",
+
+	"form.category":"Category",
+	"form.optional":"(optional)",
+
+	"btn.send":"Send",
+	"btn.login":"Log in",
+	"btn.browse":"Browse",
+	"btn.get.started":"Get started",
+	"btn.get.started.now":"Get started now",
+	"btn.get.started.for.free":"Get started for free",
+	"btn.request.a.demo":"Request a demo",
+	"btn.request.demo":"Request a demo",
+	"btn.submit.application":"Submit application",
+
+	"_comment":"Error 404",
+
+	"error404.title":"Page not found.",
+	"error404.description":"But don’t worry, nothing is ever lost on the blockchain.<br />Just need to look closer.",
+	"error404.start.from":"Start from here:",
+
+
+	"_comment":"Navigations header&footer",
+
+	"nav.home":"Home",
+	"nav.solutions":"Solutions",
+	"nav.solutions-for-users":"Users",
+	"nav.solutions-for-publishers":"Publishers",
+	"nav.solutions-for-advertisers":"Advertisers",
+	"nav.solutions-for-ad-tech-providers":"Ad tech providers",
+	"nav.pricing":"Pricing",
+	"nav.help":"Help",
+	"nav.pricing":"Pricing",
+	"nav.contact.us":"Contact us",
+	"nav.privacy-policy":"Privacy policy",
+
+
+	"_comment":"Footer",
+
+	"footer.title.about":"About",
+	"footer.title.integrations":"Integrations",
+	"footer.title.learn.more":"Learn more",
+	"footer.title.contact.us":"Contact us",
+
+
+	"_comment":"Join form",
+
+	"join.form.title":"Join AdHash",
+	"join.form.description":"AdHash is an open-source project which offers an entirely new framework for trading digital advertising. Our ecosystem needs high-quality publishers and advertisers as well as dedicated voters to weed out the bad actors.<br />If you fit into one of those categories, please let us know and we will be in touch shortly.",
+
+	"join.form.advertiser":"Advertiser",
+	"join.form.publisher":"Publisher",
+	"join.form.voter":"Voter",
+	"join.form.user":"User",
+	
+	"_coment":"Pricing form",
+	
+	"pricing.form.title":"Pricing",
+	"pricing.form.description":"Find the best pricing option for you and your team.",
+	
+	
+
+	"_comment":"Careers form",
+
+	"careers.form.title.senior-php-developer":"Senior PHP developer",
+	"careers.form.title.senior-designer":"Senior designer",
+	"careers.form.title.quality-assurance-engineer":"Quality assurance engineer",
+	"careers.form.title.devops-engineer":"DevOps engineer",
+	"careers.form.title.senior-system-administrator":"Senior system administrator",
+	"careers.form.title.data-analyst":"Data analyst",
+	"careers.form.description":"Who decides whether an ad can have more or less text in it? Or contain specific words? Those decisions cannot remain in the hands of biased private policy makers who can discriminate against entire industries.",
+
+
+	"_comment":"Form format",
+
+	"form.uploadFiles":"Upload files",
+	"form.subject":"Subject",
+	"form.name":"Name",
+	"form.emailAddress":"Email address",
+	"form.phoneNumber":"Phone number",
+	"form.message":"Message",
+	"form.companyWebsite":"Company website",
+	"form.contactName":"Contact name",
+	"form.contactNumber":"Contact number",
+	"form.country":"Country",
+	"form.country.select":"Select country",
+	"form.paidMonthlyClicks":"Paid monthly clicks",
+	"form.monthlyImpressions":"Monthly impressions",
+	"form.walletId":"Wallet ID",
+	"form.password":"Password",
+	"form.confirmPassword":"Confirm password",
+	"form.trafficType":"Traffic type",
+	"form.trafficType.Desktop":"Desktop",
+	"form.trafficType.Mobile":"Mobile",
+	"form.trafficType.App":"App",
+	"form.questionSSPOrCPPlatform":"Are you interested in using the AdHash Server-Side Platform (offers the best data accuracy, 1-2 hours set up time) or the AdHash Cloud Platform (excellent data accuracy, instant set up)?",
+	"form.questionSSPOrCPPlatform.SelectPlatform":"Select platform",
+	"form.questionSSPOrCPPlatform.SSPPlatform":"AdHash Server-Side Platform",
+	"form.questionSSPOrCPPlatform.CPPlatform":"AdHash Cloud Platform",
+	"form.questionLAAdH":"How did you learn about AdHash?",
+	"form.questionLAAdH.SawAnAd":"Saw an ad",
+	"form.questionLAAdH.FromTheMedia":"From the media",
+	"form.questionLAAdH.ThroughOnlineResearch":"Through online research",
+	"form.questionLAAdH.ReferredByAnExistingUser":"Referred by an existing user",
+	"form.questionLAAdH.Other":"Other",
+	"form.questionHMS":"How much are you willing to spend to get an ad-free browsing experience?",
+	"form.questionHMS.LessThan1USDPerMonth":"Less than 1 USD per month",
+	"form.questionHMS.1_5USDPerMonth":"1 - 5 USD per month",
+	"form.questionHMS.5_10USDPerMonth":"5 - 10 USD per month",
+	"form.questionHMS.MoreThan10USDPerMonth":"More than 10 USD per month",
+
+	"_comment":"Form validation",
+
+	"form.companyWebsite.is.required":"A website is required.",
+	"form.name.is.required":"A name is required.",
+	"form.contactName.is.required":"A contact name is required.",
+	"form.contactNumber.is.required":"A contact number is required.",
+	"form.emailAddress.is.required":"An email address is required.",
+	"form.country.is.required":"A country is required.",
+	"form.monthlyImpressions.is.required":"The number of monthly impressions is required.",
+	"form.message.is.required":"A message is required.",
+	"form.trafficType.is.required":"Traffic type is required.",
+	"form.questionSSPOrCPPlatform.is.required":"One of the two choices is required.",
+	"form.questionLYWOrAW.is.required":"Please choose an option.",
+	"form.walletId.is.required":"A wallet ID is required.",
+	"form.walletId.do.not.match":"A wallet ID do not match.",
+	"form.password.is.required":"A password is required.",
+	"form.password.is.short":"A password is too short.",
+	"form.confirmPassword.do.not.match":"The two passwords do not match."
+}

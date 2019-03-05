@@ -1,0 +1,206 @@
+<form action="<?php echo SITE_URL; ?>/site/join-form/publisher.html" method="post" autocomplete="off" role="tabpanel" id="publisher" class="tab-pane<?php if($form == 'publisher'): ?> show active<?php endif; ?>" aria-labelledby="publisher-tab">
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="publisherCompanyWebsite"><?php echo Language::translate('form.companyWebsite'); ?>:</label>
+				<?php
+					$companyWebsite = ($form == 'publisher' && isset($_POST['companyWebsite']) ? $_POST['companyWebsite'] : '');
+					$companyWebsiteErrorMSG = ($form == 'publisher' && !empty($errorValidation['companyWebsite']) ? $errorValidation['companyWebsite'] : '');
+				?>
+				<input type="text" name="companyWebsite" value="<?php echo htmlspecialchars($companyWebsite); ?>" id="publisherCompanyWebsite" class="form-control<?php if($companyWebsiteErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="companyWebsitePublisherHelp" />
+				<div class="line-gradient"></div>
+				<small id="companyWebsitePublisherHelp" class="invalid-feedback"><?php echo $companyWebsiteErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="publisherContactName"><?php echo Language::translate('form.contactName'); ?>:</label>
+				<?php
+					$contactName = ($form == 'publisher' && isset($_POST['contactName']) ? $_POST['contactName'] : '');
+					$contactNameErrorMSG = ($form == 'publisher' && !empty($errorValidation['contactName']) ? $errorValidation['contactName'] : '');
+				?>
+				<input type="text" name="contactName" value="<?php echo htmlspecialchars($contactName); ?>" id="publisherContactName" class="form-control<?php if($contactNameErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="contactNamePublisherHelp" />
+				<div class="line-gradient"></div>
+				<small id="contactNamePublisherHelp" class="invalid-feedback"><?php echo $contactNameErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="publisherContactNumber"><?php echo Language::translate('form.contactNumber'); ?>:</label>
+				<?php
+					$contactNumber = ($form == 'publisher' && isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '');
+					$contactNumberErrorMSG = ($form == 'publisher' && !empty($errorValidation['contactNumber']) ? $errorValidation['contactNumber'] : '');
+				?>
+				<input type="text" name="contactNumber" value="<?php echo htmlspecialchars($contactNumber); ?>" id="publisherContactNumber" class="form-control<?php if($contactNumberErrorMSG): ?> is-invalid<?php endif; ?>" pattern="[0-9\.\-\s\(\)]{5,}" aria-describedby="contactNumberPublisherHelp" />
+				<div class="line-gradient"></div>
+				<small id="contactNumberPublisherHelp" class="invalid-feedback"><?php echo $contactNumberErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="publisherEmailAddress"><?php echo Language::translate('form.emailAddress'); ?>:</label>
+				<?php
+					$emailAddress = ($form == 'publisher' && isset($_POST['emailAddress']) ? $_POST['emailAddress'] : '');
+					$emailAddressErrorMSG = ($form == 'publisher' && !empty($errorValidation['emailAddress']) ? $errorValidation['emailAddress'] : '');
+				?>
+				<input type="text" name="emailAddress" value="<?php echo htmlspecialchars($emailAddress); ?>" id="publisherEmailAddress" class="form-control<?php if($emailAddressErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="emailAddressPublisherHelp" />
+				<div class="line-gradient"></div>
+				<small id="emailAddressPublisherHelp" class="invalid-feedback"><?php echo $emailAddressErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="publisherCountry"><?php echo Language::translate('form.country'); ?>:</label>
+				<?php
+					$country = ($form == 'publisher' && isset($_POST['country']) ? $_POST['country'] : '');
+					$countryErrorMSG = ($form == 'publisher' && !empty($errorValidation['country']) ? $errorValidation['country'] : '');
+				?>
+				<select name="country" id="publisherCountry" class="form-control custom-select<?php if($countryErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="countryPublisherHelp">
+					<option value=""><?php echo Language::translate('form.country.select'); ?></option>
+					<?php $countries = CountriesHelper::$countries; ?>
+					<?php foreach($countries as $countryCode => $countryName): ?>
+						<option value="<?php echo $countryCode; ?>" <?php if($country == $countryCode): ?>selected="selected"<?php endif; ?>>
+							<?php echo $countryName; ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
+				<div class="line-gradient"></div>
+				<small id="countryPublisherHelp" class="invalid-feedback"><?php echo $countryErrorMSG; ?></small>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="form-group">
+				<label for="publisherMonthlyImpressions"><?php echo Language::translate('form.monthlyImpressions'); ?>:</label>
+				<?php
+					$monthlyImpressions = ($form == 'publisher' && isset($_POST['monthlyImpressions']) ? $_POST['monthlyImpressions'] : '');
+					$monthlyImpressionsErrorMSG = ($form == 'publisher' && !empty($errorValidation['monthlyImpressions']) ? $errorValidation['monthlyImpressions'] : '');
+				?>
+				<input type="text" name="monthlyImpressions" value="<?php echo htmlspecialchars($monthlyImpressions); ?>" id="publisherMonthlyImpressions" class="form-control<?php if($monthlyImpressionsErrorMSG): ?> is-invalid<?php endif; ?>" pattern="[0-9]+([\.,][0-9]+)?" aria-describedby="monthlyImpressionsPublisherHelp" />
+				<div class="line-gradient"></div>
+				<small id="monthlyImpressionsPublisherHelp" class="invalid-feedback"><?php echo $monthlyImpressionsErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label for="publisherMessage"><?php echo Language::translate('form.message'); ?>:</label>
+				<?php
+					$message = ($form == 'publisher' && isset($_POST['message']) ? $_POST['message'] : '');
+					$messageErrorMSG = ($form == 'publisher' && !empty($errorValidation['message']) ? $errorValidation['message'] : '');
+				?>
+				<textarea name="message" id="publisherMessage" class="form-control max-h-400px<?php if($messageErrorMSG): ?> is-invalid<?php endif; ?>" rows="3" aria-describedby="messagePublisherHelp"><?php echo htmlspecialchars($message); ?></textarea>
+				<div class="line-gradient"></div>
+				<small id="messagePublisherHelp" class="invalid-feedback"><?php echo $messageErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label><?php echo Language::translate('form.trafficType'); ?>:</label>
+				<?php
+					$trafficTypeDesktop = ($form == 'publisher' && isset($_POST['trafficType']['Desktop']));
+					$trafficTypeMobile = ($form == 'publisher' && isset($_POST['trafficType']['Mobile']));
+					$trafficTypeApp = ($form == 'publisher' && isset($_POST['trafficType']['App']));
+					$trafficTypeErrorMSG = ($form == 'publisher' && !empty($errorValidation['trafficType']) ? $errorValidation['trafficType'] : '');
+				?>
+				<div class="form-row<?php if($trafficTypeErrorMSG): ?> is-invalid<?php endif; ?>" aria-describedby="trafficTypePublisherHelp">
+					<div class="col-auto">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="trafficType[Desktop]" value="yes" id="publisherTrafficTypeDesktop" class="custom-control-input" <?php if($trafficTypeDesktop): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherTrafficTypeDesktop" class="custom-control-label mb-0"><?php echo Language::translate('form.trafficType.Desktop'); ?></label>
+						</div>
+					</div>
+					<div class="col-auto">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="trafficType[Mobile]" value="yes" id="publisherTrafficTypeMobile" class="custom-control-input" <?php if($trafficTypeMobile): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherTrafficTypeMobile" class="custom-control-label mb-0"><?php echo Language::translate('form.trafficType.Mobile'); ?></label>
+						</div>
+					</div>
+					<div class="col-auto">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="trafficType[App]" value="yes" id="publisherTrafficTypeApp" class="custom-control-input" <?php if($trafficTypeApp): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherTrafficTypeApp" class="custom-control-label mb-0"><?php echo Language::translate('form.trafficType.App'); ?></label>
+						</div>
+					</div>
+				</div>
+				<small id="trafficTypePublisherHelp" class="invalid-feedback"><?php echo $trafficTypeErrorMSG; ?></small>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15">
+		<div class="col-12">
+			<div class="form-group">
+				<label>
+					<?php echo Language::translate('form.questionLAAdH'); ?>
+					<span class="o-075"><?php echo Language::translate('form.optional'); ?></span>
+				</label>
+				<?php
+					$questionLAAdHSawAnAd = ($form == 'publisher' && isset($_POST['questionLAAdH']['SawAnAd']));
+					$questionLAAdHFromTheMedia = ($form == 'publisher' && isset($_POST['questionLAAdH']['FromTheMedia']));
+					$questionLAAdHThroughOnlineResearch = ($form == 'publisher' && isset($_POST['questionLAAdH']['ThroughOnlineResearch']));
+					$questionLAAdHReferredByAnExistingUser = ($form == 'publisher' && isset($_POST['questionLAAdH']['ReferredByAnExistingUser']));
+					$questionLAAdHOther = ($form == 'publisher' && isset($_POST['questionLAAdH']['Other']));
+					$questionLAAdHOtherField = ($questionLAAdHOther ? $_POST['questionLAAdH']['Other'] : '');
+				?>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[SawAnAd]" value="yes" id="publisherSawAnAd" class="custom-control-input" <?php if($questionLAAdHSawAnAd): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherSawAnAd" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.SawAnAd'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[FromTheMedia]" value="yes" id="publisherFromTheMedia" class="custom-control-input" <?php if($questionLAAdHFromTheMedia): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherFromTheMedia" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.FromTheMedia'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[ThroughOnlineResearch]" value="yes" id="publisherThroughOnlineResearch" class="custom-control-input" <?php if($questionLAAdHThroughOnlineResearch): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherThroughOnlineResearch" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.ThroughOnlineResearch'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[ReferredByAnExistingUser]" value="yes" id="publisherReferredByAnExistingUser" class="custom-control-input" <?php if($questionLAAdHReferredByAnExistingUser): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherReferredByAnExistingUser" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.ReferredByAnExistingUser'); ?></label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="questionLAAdH[Other]" id="publisherOther" class="custom-control-input" <?php if($questionLAAdHOther): ?>checked="checked"<?php endif; ?> />
+							<label for="publisherOther" class="custom-control-label mb-0"><?php echo Language::translate('form.questionLAAdH.Other'); ?></label>
+						</div>
+					</div>
+				</div>
+				<div id="row-publisherOther" class="form-row<?php if(!$questionLAAdHOther): ?> d-none<?php endif; ?>">
+					<div class="col-6">
+						<input type="text" name="questionLAAdH[Other]" value="<?php echo htmlspecialchars($questionLAAdHOtherField); ?>" class="form-control mt-1" <?php if(!$questionLAAdHOther): ?>disabled="disabled"<?php endif; ?> />
+						<div class="line-gradient"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15 d-none">
+		<div class="col-12">
+			<div class="form-group">
+				<input type="text" name="category" placeholder="<?php echo Language::translate('form.category'); ?>" class="form-control" />
+			</div>
+		</div>
+	</div>
+	<div class="row border-offset-15 last">
+		<div class="col-auto">
+			<button class="btn btn-primary" type="submit">
+				<span><?php echo Language::translate('btn.submit.application'); ?></span>
+			</button>
+		</div>
+	</div>
+</form>

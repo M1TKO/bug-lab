@@ -1,0 +1,87 @@
+<section id="benefits-of-using-adhash" class="section full-page">
+	<header class="section-header">
+		<h1 class="section-title">Benefits of using AdHash</h1>
+	</header>
+	<div class="section-container">
+		<div class="container">
+			<div class="row last justify-content-center">
+				<?php
+					$benefits = array(
+						array(
+							'Unique Hash IDs',
+							array(
+								'Accountability and better user control.',
+								'No double-bidding or ad repetition.'
+							)
+						),
+						array(
+							'Server-Side Platform',
+							array(
+								'First-party ad serving and data analytics.',
+								'No middlemen or data discrepancies.'
+							)
+						),
+						array(
+							'AdHash Bidder',
+							array(
+								'Improved bidding model and user privacy.',
+								'A transparent 3% commission.'
+							)
+						),
+						array(
+							'Blockchain transactions',
+							array(
+								'Verifiable ad serving history.',
+								'No hidden fees or single point of failure.'
+							)
+						),
+						array(
+							'Off-chain transactions',
+							array(
+								'Unlimited scalability and added privacy.',
+								'No data leakage or ad fraud.'
+							)
+						),
+						array(
+							'Communication protocol',
+							array(
+								'Secure and instant dispute resolution.',
+								'No third-parties required.'
+							)
+						),
+						array(
+							'Voting system',
+							array(
+								'Insentivised and democratised governance.',
+								'No top-down censorship.'
+							)
+						),
+						array(
+							'Open-source code',
+							array (
+								'Auditable and open to integrations.',
+								'No walled gardens.'
+							)
+						),
+						array(
+							'Native cryptocurrency',
+							array(
+								'Fast payments and community incentives.',
+								'No costly transactions once a month.'
+							)
+						)
+					);
+				?>
+				<?php foreach($benefits as $benefit): ?>
+					<figure class="col-4">
+						<?php echo file_get_contents(ROOT_FOLDER . DS . 'static' . DS . 'images' . DS . 'benefits' . DS . str_replace(' ', '-', strtolower($benefit[0])) . '.svg'); ?>
+						<figcaption>
+							<h2><?php echo $benefit[0]; ?></h2>
+							<p><?php echo implode('</p><p>', $benefit[1]); ?></p>
+						</figcaption>
+					</figure>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+</section>

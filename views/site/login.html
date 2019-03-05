@@ -1,0 +1,26 @@
+<form action="" method="post" id="login" class="form">
+	<div class="form-container">
+		<div class="container">
+			<a href="<?php echo SITE_URL; ?>/" class="navbar-brand">
+				<img src="<?php echo SITE_URL; ?>/static/images/logos/adhash-logo-white.svg" alt="AdHash" />
+			</a>
+			<div class="form-group mb-10px">
+				<input type="text" name="username" class="form-control" placeholder="Username" required="required" autofocus aria-describedby="usernameHelp" />
+				<small id="usernameHelp" class="invalid-feedback"></small>
+			</div>
+			<div class="form-group mb-40px">
+				<input type="password" name="password" class="form-control" placeholder="Password" required="required" aria-describedby="usernameHelp" />
+				<small id="usernameHelp" class="invalid-feedback"></small>
+			</div>
+			<button class="btn btn-outline-primary btn-bg-20242c mb-10px">
+				<span>Log in</span>
+			</button>
+			<a href="<?php echo SITE_URL; ?>/site/join-form.html">Don't have an account yet? Register here.</a>
+		</div>
+	</div>
+	<div class="form-footer">
+		<a href="<?php echo SITE_URL; ?>" target="_blank">AdHash</a> © 2018 |
+		<a href="<?php echo SITE_URL; ?>#contact-us">Contact us</a> |
+		<a href="<?php echo SITE_URL; ?>/privacy-policy.html">Privacy policy</a>
+	</div>
+</form>

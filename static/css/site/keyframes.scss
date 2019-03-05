@@ -1,0 +1,14 @@
+@include keyframes(gradientBorder) {
+	from { width: 0%; }
+	to { width: 100%; }
+}
+
+@include keyframes(headerMenuOpen) {
+	from { right: -180px; }
+	to { right: 0; }
+}
+
+@include keyframes(headerMenuClose) {
+	from {right: 0;}
+	to {right: -180px;}
+}

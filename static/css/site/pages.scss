@@ -1,0 +1,1102 @@
+/**
+ * Global vars
+ */
+
+$scrollOffset: 20;
+
+/**
+ * ERROR 404 - Page not found
+ */
+
+#error-404 {
+	padding: 60px 30px;
+	background-color: #20242c;
+	border-bottom: 1px solid #fff;
+
+	figure {
+		margin: 0;
+		text-align: center;
+
+		svg {
+			max-width: 432px;
+			width: 100%;
+			max-height: 150px;
+			height: auto;
+			margin-bottom: 46px;
+		}
+
+		figcaption {
+			h2,
+			p,
+			small,
+			.btn-outline-primary {
+				color: #fff;
+			}
+
+			h2,
+			p {
+				font-size: 1.875rem;
+				font-size: 1.125rem;
+			}
+
+			h2 {
+				margin-bottom: 30px;
+			}
+
+			.bi-lg {
+				width: 100px;
+				height: 1px;
+				margin: 0 auto 18px;
+			}
+
+			p {
+				margin-bottom: 14px;
+				opacity: 1;
+			}
+
+			small {
+				display: block;
+				margin-bottom: 28px;
+				font-size: 1.125rem;
+			}
+
+			.btn-outline-primary {
+				min-width: 100px;
+
+				&::before {
+					background-color: #20242c;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: #{$scrollOffset + 420px}) {
+	#error-404 {
+		.col-auto {
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+/**
+ * Thanks
+ */
+
+#thanks {
+	padding: 60px 30px;
+	background-color: #20242c;
+	border-bottom: 1px solid #fff;
+
+	figure {
+		margin: 0;
+		text-align: center;
+
+		video,
+		.video-mask {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		video {
+			width: 100%;
+			min-height: 100%;
+			background-position: center center;
+			background-size: contain;
+			object-fit: cover;
+			pointer-events: none;
+		}
+
+		.video-mask {
+			top: 0;
+			right: 0;
+			background-color: #20242c;
+			opacity: .75;
+		}
+
+		figcaption {
+			max-width: 480px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 1;
+
+			h2,
+			p,
+			small {
+				margin-bottom: 0;
+				font-size: 1.125rem;
+				opacity: 1;
+			}
+
+			h2,
+			p,
+			small,
+			.btn-outline-primary {
+				color: #fff;
+			}
+
+			h2 {
+				margin-bottom: 2px;
+			}
+
+			.bi-lg {
+				width: 100px;
+				height: 1px;
+				margin: 20px auto;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			small {
+				display: block;
+				margin-bottom: 28px;
+			}
+
+			.btn-outline-primary {
+				min-width: 100px;
+
+				&::before {
+					background-color: #20242c;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Index - Advertising. Reinvented.
+ */
+
+#advertising-reinvented {
+	padding: 50px 30px;
+	background-color: #20242c;
+
+	.container {
+		max-width: 1000px;
+	}
+
+	h1 {
+		margin-top: -15px;
+		margin-bottom: 40px;
+		font-size: 3rem;
+		line-height: 70px;
+		color: #fff;
+	}
+
+	p {
+		margin-bottom: 0;
+		font-family: 'Courier New';
+		font-size: 1.125rem;
+		line-height: 28px;
+		color: #fff;
+		text-align: right;
+
+		&#crypto-message {
+			min-height: 28px;
+			margin-bottom: 50px;
+			word-break: break-all;
+			color: #62c5e5;
+		}
+	}
+
+	.join-adhash,
+	.read-white-paper {
+		display: flex;
+		align-items: center;
+		height: 44px;
+		font-size: 1.125rem;
+	}
+
+	#adhash-v1 {
+		display: block;
+		width: 500px;
+		height: 281px;
+	}
+}
+
+@media (min-width: 769px) {
+	#advertising-reinvented {
+		.read-white-paper {
+			span:last-child {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#advertising-reinvented {
+		padding: 25px 15px;
+
+		.read-white-paper {
+			span:first-child {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 681px) {
+	#advertising-reinvented {
+		&-right {
+			.row {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 680px) {
+	#advertising-reinvented {
+		&-left {
+			.row {
+				display: none;
+			}
+		}
+
+		&-right {
+			flex-basis: 100%;
+			max-width: 100%;
+
+			.row {
+				margin-bottom: 17px;
+			}
+		}
+
+		h1,
+		p {
+			text-align: center;
+		}
+
+		p#crypto-message {
+			margin-bottom: 20px;
+		}
+
+		video {
+			margin: 0 auto 60px;
+		}
+
+		.next-post {
+			display: none;
+		}
+	}
+}
+
+/**
+ * Index - Mission.
+ */
+
+#mission {
+	color: #fff;
+	background-color: #20242c;
+
+	.section-title {
+		display: none;
+	}
+
+	.section-container {
+		padding-top: 60px !important;
+		padding-bottom: 60px !important;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.container {
+		margin-top: 5px;
+		margin-bottom: -5px;
+		max-width: 1000px;
+		position: relative;
+		z-index: 1;
+	}
+
+	p {
+		font-size: 1.125rem;
+		opacity: 1;
+	}
+
+	.section-half-circle {
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: -100px;
+		right: -100px;
+		bottom: 0;
+	}
+
+	.bi-lg,
+	.half-circle-border {
+		width: 100%;
+		height: 700px;
+		border-radius: 70% 70% 0 0 / 40%;
+		position: absolute;
+	}
+
+	.half-circle-border {
+		border: 10px solid #20242c;
+		top: 1px;
+	}
+}
+
+@media (max-width: 680px) {
+	#mission {
+		br {
+			display: none;
+		}
+	}
+}
+
+/**
+ * Index - Benefits of using AdHash.
+ */
+
+#benefits-of-using-adhash {
+	.container {
+		margin-top: -6px;
+	}
+
+	figure {
+		margin: 0;
+		text-align: center;
+
+		svg {
+			width: 100px;
+			height: 100px;
+		}
+
+		figcaption {
+			max-width: 300px;
+			width: 100%;
+			margin:  0 auto;
+
+			h2 {
+				display: inline-block;
+				font-size: 1.125rem;
+				line-height: 2.5rem;
+				font-weight: 600;
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+$mediaBenefits: (
+	2: '(max-width: #{$scrollOffset + 990px}) and (min-width: #{$scrollOffset + 641px})',
+	1: '(max-width: #{$scrollOffset + 640px})'
+);
+
+@each $key, $val in $mediaBenefits {
+/**
+ * Index - Benefits of using AdHash (#{$key})
+ */
+
+	@media #{$val} {
+		#benefits-of-using-adhash {
+			figure {
+				-ms-flex: 0 0 100 / $key * 1%;
+				flex: 0 0 100 / $key * 1%;
+				max-width: 100 / $key * 1%;
+			}
+		}
+	}
+}
+
+/**
+ * Index - The AdHash RTB Protocol.
+ */
+
+#adhash-rtb-protocol {
+	background-color: #20242c;
+
+	.section-title {
+		color: #fff;
+	}
+
+	&-left-right {
+		margin-left: -50px;
+	}
+
+	&-left,
+	&-right {
+		padding-left: 50px;
+	}
+
+	&-left {
+		line-height: 0;
+	}
+
+	&-right {
+		flex-basis: 270px;
+		max-width: 270px;
+	}
+
+	[id*="cps-"] {
+		display: inline-block;
+		margin-bottom: 10px;
+		font-size: 1.125rem;
+		position: relative;
+		cursor: pointer;
+		color: #7e7b7a;
+
+		&::after {
+			content: '';
+			height: 1px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -7px;
+			background-color: #7e7b7a;
+		}
+
+		.custom-control-label {
+			margin-top: 1px;
+
+			&::before {
+				background-color: #7e7b7a;
+			}
+		}
+
+		~ p {
+			margin-bottom: 0;
+			color: #7e7b7a;
+			opacity: .75;
+		}
+
+		&.active {
+			color: #fff;
+
+			&::after {
+				background-color: #3298cb;
+				@include linear-gradient(left, #62c5e5, #3298cb);
+				@include animation(titleBorder 1s ease);
+			}
+
+			~ p {
+				color: #fff;
+			}
+		}
+	}
+
+	#communication_protocol_wrap,
+	#communication_protocol {
+		max-width: 930px;
+		width: 100%;
+	}
+
+	#communication_protocol_wrap {
+		height: 0;
+		padding-top: 64.35%;
+		position: relative;
+	}
+
+	#communication_protocol {
+		height: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+@media (max-width: 1200px) {
+	#adhash-rtb-protocol {
+		.container {
+			max-width: 860px;
+		}
+
+		&-left-right {
+			justify-content: center;
+		}
+
+		&-left {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+		}
+
+		&-right {
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 1200px) and (min-width: 610px) {
+	#adhash-rtb-protocol {
+		&-right {
+			.col-12 {
+				-ms-flex-preferred-size: 0;
+				flex-basis: 0;
+				-webkit-box-flex: 1;
+				-ms-flex-positive: 1;
+				flex-grow: 1;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+/**
+ * Index - The AdHash Dashboard.
+ */
+
+#adhash-dashboard {
+	&-left-right {
+		margin-left: -50px;
+	}
+
+	&-left,
+	&-right {
+		padding-left: 50px;
+	}
+
+	&-left {
+		.row > * {
+			text-align: right;
+		}
+	}
+
+	.adhash-dashboard-title {
+		margin-bottom: 10px;
+		font-size: 1.125rem;
+		font-weight: 600;
+
+		~ p {
+			margin-bottom: 0;
+			opacity: .75;
+		}
+	}
+
+	&-image {
+		max-width: 895px;
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-width: #{$scrollOffset + 1225px}) {
+	#adhash-dashboard {
+		&-left,
+		&-right {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
+
+		&-left {
+			order: 1;
+			.row > * {
+				text-align: left;
+			}
+		}
+
+		&-right {
+			text-align: left;
+		}
+	}
+}
+
+/**
+ * Index - Solutions.
+ */
+
+#solutions {
+	min-height: 100px;
+	background-color: #62c5e5;
+
+	.container {
+		margin-bottom: -30px;
+	}
+
+	.section-title {
+		color: #fff;
+	}
+
+	figure {
+		flex-basis: 180px;
+		margin-bottom: 0;
+		text-align: center;
+
+		a {
+			display: inline-block;
+			line-height: 0;
+			text-align: center;
+
+			svg {
+				width: 160px;
+				height: 160px;
+
+				.solution-hover,
+				.solution-inner-path,
+				.solution-outer-path {
+					@include transition(all ease 0.5s);
+				}
+
+				.solution-inner-path,
+				.solution-outer-path {
+					@include transform-origin(center);
+				}
+
+				.solution-hover {
+					opacity: 0;
+				}
+
+				&:hover {
+					.solution-hover,
+					.solution-inner-path,
+					.solution-outer-path {
+						@include transition(all ease 0.5s);
+					}
+
+					.solution-inner-path,
+					.solution-outer-path {
+						@include transform-origin(center);
+					}
+
+					.solution-hover {
+						opacity: 1;
+					}
+
+					.solution-inner-path {
+						opacity: 0;
+						@include transform(scale3d(1.15, 1.15, 1.15));
+					}
+
+					.solution-outer-path {
+						@include transform(scale3d(0.9, 0.9, 0.9));
+					}
+				}
+			}
+		}
+
+		figcaption {
+			margin: 18px 0px -5px;
+			color: #fff;
+		}
+	}
+
+	&-left-right {}
+	&-left, &-right {}
+	&-left {}
+
+	&-right {
+		.panel {
+			h2.panel-title {
+				font-size: 1.875rem;
+				font-weight: normal;
+			}
+			
+			&-body {
+				padding-left: 0;
+
+				.panel {
+					&:not(:last-child) {
+						margin-bottom: 30px;
+					}
+
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	&-users,
+	&-publishers,
+	&-advertisers,
+	&-ad-tech-providers,
+	&-blockchain-startups {
+		.solutions-nav a {
+			img {
+				opacity: 0.5;
+			}
+
+			&:hover {
+				img {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&-users #solution-users-icon,
+	&-publishers #solution-publishers-icon,
+	&-advertisers #solution-advertisers-icon,
+	&-ad-tech-providers #solution-ad-tech-providers-icon,
+	&-blockchain-startups #solution-blockchain-startups-icon {
+		font-weight: 600;
+
+		img {
+			opacity: 1;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	#solutions {
+		&-left {
+			display: none;
+		}
+
+		&-right {
+			flex-basis: 100%;
+
+			.panel-body {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 980px) {
+	#solutions {
+		figure {
+			a {
+				svg {
+					width: 135px;
+					height: 135px;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Index - Frequently Asked Questions.
+ */
+
+#frequently-asked-questions {
+	min-height: calc(50vh - 50px);
+	
+	h2 {
+		font-weight: 600;
+	}
+}
+
+/**
+ * Main sections
+ */
+
+@media (max-width: 380px) {
+	#mission,
+	#benefits-of-using-adhash,
+	#adhash-rtb-protocol,
+	#adhash-dashboard,
+	#solutions,
+	#frequently-asked-questions {
+		.section-title {
+			font-size: 24px;
+		}
+	}
+}
+
+/**
+ * Voting
+ */
+
+#voting {
+	.content {
+		h2 {
+			font-size: 1.125rem;
+			font-weight: 600;
+		}
+
+		&:last-child {
+			> *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.panel {
+		h2.panel-title {
+			font-size: 1.875rem;
+			font-weight: normal;
+		}
+
+		.panel-body {
+			padding-left: 0;
+		}
+	}
+
+	.creative-quality-control {
+
+	}
+
+	.img-wrap {
+		margin-bottom: 0;
+		padding: 20px 0;
+	}
+
+	img {
+		width: 100%;
+
+		&#adhash-creative-300x250 {}
+		&#adhash-creative-300x250-quality-control {}
+		&#adhash-creative-300x250-quality-control-flag {}
+		&#adhash-creative-300x250-quality-control-block {}
+
+		&#user-voting {
+			max-width: 768px;
+		}
+
+		&#rank-scale {
+			max-width: 500px;
+		}
+
+		&#voting-rank {
+			max-width: 768px;
+		}
+
+		&#equation-votingreward {
+			max-width: 320px;
+		}
+	}
+}
+
+/**
+ * Help
+ */
+
+#help {
+	.panel {
+		&.panel-main {
+			.panel {
+				.panel-group::before {
+					content: '';
+					display: block;
+					height: 11px;
+				}
+
+				.panel {
+					&::after {
+						display: none;
+					}
+
+					.panel-title {
+						font-size: 1rem;
+					}
+
+					.pane-body::before {
+						content: '';
+						display: block;
+						height: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Careers
+ */
+
+#careers {
+	.panel {
+		h2.panel-title {
+			font-size: 1.875rem;
+			font-weight: normal;
+		}
+	}
+
+	.apply {
+		margin-top: 20px;
+		font-size: 1.125rem;
+	}
+}
+
+@media (min-width: 769px) {
+	#careers {
+		.panel-collapse {
+			.panel {
+				&:not(:last-child) {
+					margin-bottom: 60px;
+
+					&::after {
+						bottom: -30px;
+					}
+				}
+
+				> .panel-body::before {
+					height: 24px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#careers {
+		.career-heading {
+			display: none;
+		}
+	}
+}
+
+/**
+ * Join form
+ */
+
+#join-form {
+	.nav {
+		border-bottom: 1px solid #20242c;
+
+		li {
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+
+			a {
+				padding: 8px 0;
+				color: #20242c;
+				position: relative;
+
+				&:not(.active) {
+					opacity: .75;
+				}
+
+				&.active {
+					&::after {
+						content: '';
+						height: 5px;
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: -3px;
+						background-color: #3298cb;
+						@include linear-gradient(left, #62c5e5, #3298cb);
+					}
+				}
+			}
+		}
+	}
+
+	select.form-control {
+		&:not([size]):not([multiple]) {
+			height: 33px;
+		}
+	}
+}
+
+/**
+ * Privacy Policy
+ */
+
+#privacy-policy {
+	.panel {
+		h2.panel-title {
+			font-size: 1.875rem;
+			font-weight: normal;
+		}
+	}
+
+	th,
+	td {
+		padding: 10px;
+		vertical-align: top;
+		border: 1px solid #f0f0f0;
+	}
+}
+
+/**
+ * Homepage backgrond video
+ */
+
+#homepage-video-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+
+#homepage-video {
+	min-width: 100%;
+	min-height: 100%;
+	opacity: 0.2;
+}
+
+#client-bar {
+	padding: 30px 30px 0px 30px;
+	margin-bottom: 120px;
+}
+
+/**
+ * Custom col-sm alignment for client logo section
+ */
+
+.col-sm {
+	text-align: center;
+	
+	img {
+		width: auto;
+		height:40px;
+	}
+}
+
+/**
+ * Join form
+ */
+
+#pricing-form {
+	.row {
+		&#pricing-header {
+			background-color: #62c5e5;
+		}
+		
+		p {
+			color: #ffffff;
+			opacity: 1;
+			margin-bottom: 0;
+		}
+		
+	}
+	
+	img {
+		width: 100%;
+		height: auto;
+		border-radius: 50%;
+		max-width: 80px;
+		margin-top: 30px;
+	}
+	
+	h2 {
+		color: #ffffff;
+		font-size: 1.5rem;
+		
+	}
+	
+	h3 {
+		margin-top: 30px;
+	}
+
+}
+
+.panel-title {
+	
+		padding-right: 30px;
+		
+		&::after {
+		content: '';
+		height: 1px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 100%;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		background-color: #7e7b7a;
+		@include linear-gradient(90deg, #62c5e5, #3298cb);
+		}
+}
+

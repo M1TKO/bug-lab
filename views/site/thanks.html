@@ -1,0 +1,44 @@
+<section id="thanks" class="section full-page">
+	<figure>
+		<video id="adhash-v2" autoplay muted loop playsinline poster="<?php echo SITE_URL; ?>/static/images/videos/adhash-v2.jpg" data-src="<?php echo SITE_URL; ?>/static/videos/adhash-v2.mp4"></video>
+		<div class="video-mask"></div>
+		<figcaption>
+			<?php if(in_array($thanksFromForm, array('contact-us', 'careers'))): ?>
+				<h2>Got it! We will be in touch shortly.</h2>
+				<div class="bi-lg"></div>
+				<a href="<?php echo SITE_URL; ?>">Take me back to the homepage.</a>
+			<?php elseif(in_array($thanksFromForm, array('advertiser', 'publisher'))): ?>
+				<h2>Thank you for your request to join AdHash!</h2>
+				<p>We will review your application and get back to you shortly.</p>
+				<div class="bi-lg"></div>
+				<small>In the meantime, keep exploring:</small>
+				<div class="row last justify-content-center">
+					<div class="col-auto">
+						<a href="<?php echo SITE_URL; ?>" class="btn btn-outline-primary">
+							<span><?php echo Language::translate('nav.home'); ?></span>
+						</a>
+					</div>
+					<div class="col-auto">
+						<a href="<?php echo SITE_URL; ?>#solutions" class="btn btn-outline-primary">
+							<span><?php echo Language::translate('nav.solutions'); ?></span>
+						</a>
+					</div>
+					<div class="col-auto">
+						<a href="<?php echo SITE_URL; ?>/help.html" class="btn btn-outline-primary">
+							<span><?php echo Language::translate('nav.help'); ?></span>
+						</a>
+					</div>
+				</div>
+			<?php elseif($thanksFromForm == 'voter'): ?>
+				<p>Thank you for your request to join AdHash!<br /> Please check your email.</p>
+				<div class="bi-lg"></div>
+			<?php elseif($thanksFromForm == 'user'): ?>
+				<p>Thank you for your request to join AdHash!</p>
+				<div class="bi-lg"></div>
+			<?php endif; ?>
+		</figcaption>
+	</figure>
+	<script>
+		loadVideo('adhash-v2');
+	</script>
+</section>

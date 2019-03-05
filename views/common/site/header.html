@@ -1,0 +1,83 @@
+<header id="header">
+	<div id="header-logo">
+		<a href="<?php echo SITE_URL; ?>/" class="navbar-brand">
+			<img src="<?php echo SITE_URL; ?>/static/images/logos/bug-lab-logo.svg" alt="BugLab" />
+		</a>
+	</div>
+	<div id="header-buttons" class="btn-group">
+		<div class="btn-group-item">
+			<a href="<?php echo SITE_URL; ?>/login.html" id="nav-login-adhash" class="btn">
+				<span><?php echo Language::translate('btn.login'); ?></span>
+			</a>
+		</div>
+		<div class="btn-group-item">
+			<a href="<?php echo SITE_URL; ?>/site/join-form.html" class="btn btn-primary form-page-open">
+				<span><?php echo Language::translate('btn.get.started'); ?></span>
+			</a>
+		</div>
+		<div class="btn-group-item">
+			<div id="header-nav-button" class="button_hamburger_htx">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<ul id="header-nav">
+		<li>
+			<a href="<?php echo SITE_URL; ?>/" <?php echo $view == 'index' ? 'class="active"' : ''; ?>>
+				<?php echo Language::translate('nav.home'); ?>
+			</a>
+		</li>
+		<!--<li id="navSolutions" <?php echo in_array($view, array('solutions_for_users', 'solutions_for_publishers', 'solutions_for_advertisers', 'solutions_for_ad_tech_providers')) ? 'class="open"' : ''; ?>>
+			<a href="#" <?php echo in_array($view, array('solutions_for_users', 'solutions_for_publishers', 'solutions_for_advertisers', 'solutions_for_ad_tech_providers')) ? 'class="active"' : ''; ?>>
+				<?php echo Language::translate('nav.solutions'); ?>
+			</a>
+			<ul>
+				<li>
+					<a href="<?php echo SITE_URL; ?>/solutions-for-users.html" <?php echo $view == 'solutions_for_users' ? 'class="active"' : ''; ?>>
+						<?php echo Language::translate('nav.solutions-for-users'); ?>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo SITE_URL; ?>/solutions-for-publishers.html" <?php echo $view == 'solutions_for_publishers' ? 'class="active"' : ''; ?>>
+						<?php echo Language::translate('nav.solutions-for-publishers'); ?>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo SITE_URL; ?>/solutions-for-advertisers.html" <?php echo $view == 'solutions_for_advertisers' ? 'class="active"' : ''; ?>>
+						<?php echo Language::translate('nav.solutions-for-advertisers'); ?>
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo SITE_URL; ?>/solutions-for-ad-tech-providers.html" <?php echo $view == 'solutions_for_ad_tech_providers' ? 'class="active"' : ''; ?>>
+						<?php echo Language::translate('nav.solutions-for-ad-tech-providers'); ?>
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="<?php echo SITE_URL; ?>/voting.html" <?php echo $view == 'voting' ? 'class="active"' : ''; ?>>
+				<?php echo Language::translate('nav.voting'); ?>
+			</a>
+		</li>
+		<li>
+			<a href="<?php echo SITE_URL; ?>/help.html" <?php echo $view == 'help' ? 'class="active"' : ''; ?>>
+				<?php echo Language::translate('nav.help'); ?>
+			</a>
+		</li>-->
+		
+		<li>
+			<a href="<?php echo SITE_URL; ?>/pricing.html" class="form-page-open <?php echo $view == 'careers' ? 'active' : ''; ?>">
+				<?php echo Language::translate('nav.pricing'); ?>
+			</a>
+		</li>
+		
+		<!-- <li>
+			<a href="#contact-us">
+				<?php echo Language::translate('nav.contact.us'); ?>
+			</a>
+		</li> -->
+	</ul>
+	<script>
+		headerMenuInit();
+	</script>
+</header>

@@ -1,0 +1,19 @@
+{
+	"scripts": {
+		"lint:css": "node ./node_modules/stylelint/bin/stylelint.js static/css/*/*.scss --fix",
+		"build:site.css": "node ./node_modules/node-sass/bin/node-sass ./static/css/site/main.scss ./static/css/site/main.min.css --output-style compressed",
+		"build:panel.css": "node ./node_modules/node-sass/bin/node-sass ./static/css/panel/main.scss ./static/css/panel/main.min.css --output-style compressed",
+		"build:css": "npm run build:site.css && npm run build:panel.css",
+		"build:site.js": "node ./node_modules/webpack/bin/webpack.js static/scripts/site/main.js static/scripts/site/build/main-bundle.js && node ./node_modules/babel-cli/bin/babel.js static/scripts/site/build/main-bundle.js --out-file static/scripts/site/build/main-transpiled.js && node ./node_modules/webpack/bin/webpack.js static/scripts/site/build/main-transpiled.js static/scripts/site/main.min.js -p",
+		"build:panel.js": "node ./node_modules/webpack/bin/webpack.js static/scripts/panel/main.js static/scripts/panel/build/main-bundle.js && node ./node_modules/babel-cli/bin/babel.js static/scripts/panel/build/main-bundle.js --out-file static/scripts/panel/build/main-transpiled.js && node ./node_modules/webpack/bin/webpack.js static/scripts/panel/build/main-transpiled.js static/scripts/panel/main.min.js -p",
+		"build:js": "npm run build:site.js && npm run build:panel.js"
+	},
+	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-eslint": "^8.2.2",
+		"babel-preset-es2015": "^6.24.1",
+		"node-sass": "^4.9.3",
+		"stylelint": "^9.1.3",
+		"webpack": "^3.8.1"
+	}
+}

@@ -1,0 +1,5 @@
+node_modules/
+logs/
+static/videos/
+static/documents/
+package-lock.json
