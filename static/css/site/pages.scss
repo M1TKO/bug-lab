@@ -609,7 +609,8 @@ $mediaBenefits: (
 
 #solutions {
 	min-height: 100px;
-	background-color: #62c5e5;
+	background-color: #3298cb;
+	@include linear-gradient(left, #62c5e5, #3298cb);
 
 	.container {
 		margin-bottom: -30px;
@@ -1048,10 +1049,52 @@ $mediaBenefits: (
  * Join form
  */
 
-#pricing-form {
+ #pricing-form {
+	.container > .row {
+		margin: 0;
+	}
+	
+	.price-option-container{
+		border: 1px dashed #62c5e5;
+		border-top: 0;
+		margin: 10px;
+		
+	}
+	
 	.row {
+
 		&#pricing-header {
-			background-color: #62c5e5;
+			background-color: #3298cb;
+			@include linear-gradient(left, #62c5e5, #3298cb);
+			padding: 0;
+			height: 160px;
+			
+			.col-auto, .col {
+				padding: 0;
+			}
+			
+			span.price {
+				font-size: 2.3rem;
+				font-weight: 600;
+			}
+
+			.price-container{
+				padding: 0;
+				margin-left: 10px; 
+			}
+
+			.pricing-image {
+				margin-left: 15px;
+		
+				img {
+					width: 100%;
+					height: auto;
+					max-width: 80px;
+					padding: 3px;
+					background-color: #ffffff;
+				}
+			}
+
 		}
 		
 		p {
@@ -1062,18 +1105,10 @@ $mediaBenefits: (
 		
 	}
 	
-	img {
-		width: 100%;
-		height: auto;
-		border-radius: 50%;
-		max-width: 80px;
-		margin-top: 30px;
-	}
-	
 	h2 {
 		color: #ffffff;
 		font-size: 1.5rem;
-		
+		margin-bottom: 0;
 	}
 	
 	h3 {
@@ -1083,20 +1118,37 @@ $mediaBenefits: (
 }
 
 .panel-title {
-	
-		padding-right: 30px;
-		
-		&::after {
+	padding-right: 30px;
+	margin-bottom: 30px;
+	position: relative;
+
+	&::after {
 		content: '';
 		height: 1px;
 		position: absolute;
-		left: 0px;
-		right: 0px;
+		left: 0;
 		top: 100%;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		background-color: #7e7b7a;
+		width: 50px;
+		margin-top: 15px;
+		background-color: #62c5e5;
 		@include linear-gradient(90deg, #62c5e5, #3298cb);
-		}
+	}
 }
 
+@media (max-width: 768px) {
+	#pricing-form{
+		.container > .row {
+			margin-left: 0;
+		}
+
+		.price-option-container{
+			flex-basis: calc(50% - 20px);
+		}
+	}
+}
+	
+@media (max-width: 480px) {
+	main section#pricing-form .row > [class*="col"] {
+		flex-basis: content;
+	}
+}
