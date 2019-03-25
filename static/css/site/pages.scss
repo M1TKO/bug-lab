@@ -189,7 +189,6 @@ $scrollOffset: 20;
 
 	p {
 		margin-bottom: 0;
-		font-family: 'Courier New';
 		font-size: 1.125rem;
 		line-height: 28px;
 		color: #fff;
@@ -549,6 +548,10 @@ $mediaBenefits: (
  */
 
 #adhash-dashboard {
+	> .container {
+		max-width: 1000px;
+	}
+
 	&-left-right {
 		margin-left: -50px;
 	}
@@ -1049,7 +1052,7 @@ $mediaBenefits: (
  * Join form
  */
 
- #pricing-form {
+#pricing-form {
 	.container > .row {
 		margin: 0;
 	}
@@ -1058,6 +1061,7 @@ $mediaBenefits: (
 		border: 1px dashed #62c5e5;
 		border-top: 0;
 		margin: 10px;
+		padding-bottom: 60px;
 		
 	}
 	
